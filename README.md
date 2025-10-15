@@ -1,5 +1,7 @@
 # WailBrew Landing Page
 
+[WailBrew App](https://github.com/wickenico/WailBrew)
+
 A modern, responsive landing page for WailBrew - a minimalistic Homebrew GUI for macOS. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
