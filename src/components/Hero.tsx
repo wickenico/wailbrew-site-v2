@@ -29,13 +29,12 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
       
       <div className="container mx-auto max-w-5xl text-center relative z-10">
-        <div className="flex justify-center mb-6 animate-fade-in">
-          <img src={logo} alt="WailBrew" className="w-24 h-24 md:w-32 md:h-32" />
+        <div className="flex items-center justify-center gap-4 mb-6 animate-fade-in">
+          <img src={logo} alt="WailBrew" className="w-20 h-20 md:w-24 md:h-24" />
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent pb-2">
+            WailBrew
+          </h1>
         </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in bg-gradient-primary bg-clip-text text-transparent pb-2">
-          WailBrew
-        </h1>
 
         <p className="text-lg md:text-xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
           A minimalistic and beautiful GUI for Homebrew package management on macOS. 
