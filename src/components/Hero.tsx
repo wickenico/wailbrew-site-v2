@@ -42,14 +42,18 @@ export const Hero = () => {
           Experience the power of command-line tools through an intuitive, modern interface.
         </p>
 
-        <div className="bg-card border border-code-border rounded-lg p-6 max-w-2xl mx-auto mb-8 animate-fade-in">
+        <div className="bg-terminal-bg border border-border/50 rounded-xl p-6 max-w-2xl mx-auto mb-8 animate-fade-in shadow-2xl">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm text-muted-foreground">Quick Install</span>
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500" />
+              <div className="w-3 h-3 rounded-full bg-green-500" />
+            </div>
             <Button
               variant="ghost"
               size="sm"
               onClick={copyToClipboard}
-              className="h-8 gap-2"
+              className="h-8 gap-2 hover:bg-white/5"
             >
               {copied ? (
                 <Check className="w-4 h-4" />
@@ -59,18 +63,11 @@ export const Hero = () => {
               {copied ? "Copied!" : "Copy"}
             </Button>
           </div>
-          <div className="flex items-start gap-3">
-            <div className="flex gap-1.5 pt-3">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500" />
-              <div className="w-3 h-3 rounded-full bg-green-500" />
-            </div>
-            <pre className="flex-1 text-left overflow-x-auto">
-              <code className="text-sm text-accent font-mono">
-                {installCommand}
-              </code>
-            </pre>
-          </div>
+          <pre className="overflow-x-auto">
+            <code className="text-sm md:text-base text-accent font-mono block">
+              {installCommand}
+            </code>
+          </pre>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-8 animate-fade-in">
