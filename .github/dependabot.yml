@@ -1,41 +1,12 @@
 version: 2
 updates:
-  # Enable version updates for pnpm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
-      # Time is in UTC - using a random time (03:15 AM UTC)
-      time: "03:15"
-    # Group all minor and patch updates together
-    groups:
-      dependencies:
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
-    # Configure pull request behavior
-    open-pull-requests-limit: 10
-    # Add labels to PRs
-    labels:
-      - "dependencies"
-      - "automated"
-    # Commit message prefix
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-
-  # Enable version updates for GitHub Actions (if you add any workflows)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-      # Time is in UTC - using a random time (03:30 AM UTC)
-      time: "03:30"
-    labels:
-      - "dependencies"
-      - "github-actions"
-    commit-message:
-      prefix: "ci"
+
 
