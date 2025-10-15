@@ -29,7 +29,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
       
       <div className="container mx-auto max-w-5xl text-center relative z-10">
-        <div className="flex items-center justify-center gap-4 mb-6 animate-fade-in">
+        <div className="flex items-center justify-center gap-4 mb-6 pt-8 md:pt-12 animate-fade-in">
           <img src={logo} alt="WailBrew" className="w-20 h-20 md:w-24 md:h-24" />
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent pb-2">
             WailBrew
