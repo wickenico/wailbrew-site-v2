@@ -3,7 +3,7 @@ import { Download, Github, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import logo from "@/assets/logo.png";
-import screenshot from "@/assets/screenshot.png";
+import screenshot from "@/assets/screenshot-transparent.png";
 
 export const Hero = () => {
   const [copied, setCopied] = useState(false);
