@@ -166,8 +166,8 @@ importers:
         specifier: ^0.5.16
         version: 0.5.19(tailwindcss@3.4.18)
       '@types/node':
-        specifier: ^22.16.5
-        version: 22.18.10
+        specifier: ^24.7.2
+        version: 24.7.2
       '@types/react':
         specifier: ^18.3.23
         version: 18.3.26
@@ -176,7 +176,7 @@ importers:
         version: 18.3.7(@types/react@18.3.26)
       '@vitejs/plugin-react-swc':
         specifier: ^3.11.0
-        version: 3.11.0(vite@5.4.20(@types/node@22.18.10))
+        version: 3.11.0(vite@5.4.20(@types/node@24.7.2))
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.6)
@@ -194,7 +194,7 @@ importers:
         version: 15.15.0
       lovable-tagger:
         specifier: ^1.1.11
-        version: 1.1.11(vite@5.4.20(@types/node@22.18.10))
+        version: 1.1.11(vite@5.4.20(@types/node@24.7.2))
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -209,7 +209,7 @@ importers:
         version: 8.46.1(eslint@9.37.0(jiti@1.21.7))(typescript@5.9.3)
       vite:
         specifier: ^5.4.19
-        version: 5.4.20(@types/node@22.18.10)
+        version: 5.4.20(@types/node@24.7.2)
 
 packages:
 
@@ -1502,8 +1502,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/node@22.18.10':
-    resolution: {integrity: sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg==}
+  '@types/node@24.7.2':
+    resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
 
   '@types/prop-types@15.7.15':
     resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
@@ -2544,8 +2544,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+  undici-types@7.14.0:
+    resolution: {integrity: sha512-QQiYxHuyZ9gQUIrmPo3IA+hUl4KYk8uSA7cHrcKd/l3p1OTpZcM0Tbp9x7FAtXdAYhlasd60ncPpgu6ihG6TOA==}
 
   update-browserslist-db@1.1.3:
     resolution: {integrity: sha512-UxhIZQ+QInVdunkDAaiazvvT/+fXL5Osr0JZlJulepYu6Jd7qJtDZjlur0emRlT71EN3ScPoE7gvsuIKKNavKw==}
@@ -3765,9 +3765,9 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/node@22.18.10':
+  '@types/node@24.7.2':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 7.14.0
 
   '@types/prop-types@15.7.15': {}
 
@@ -3877,11 +3877,11 @@ snapshots:
     optionalDependencies:
       react: 18.3.1
 
-  '@vitejs/plugin-react-swc@3.11.0(vite@5.4.20(@types/node@22.18.10))':
+  '@vitejs/plugin-react-swc@3.11.0(vite@5.4.20(@types/node@24.7.2))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@swc/core': 1.13.5
-      vite: 5.4.20(@types/node@22.18.10)
+      vite: 5.4.20(@types/node@24.7.2)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -4408,7 +4408,7 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  lovable-tagger@1.1.11(vite@5.4.20(@types/node@22.18.10)):
+  lovable-tagger@1.1.11(vite@5.4.20(@types/node@24.7.2)):
     dependencies:
       '@babel/parser': 7.28.4
       '@babel/types': 7.28.4
@@ -4416,7 +4416,7 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.19
       tailwindcss: 3.4.18
-      vite: 5.4.20(@types/node@22.18.10)
+      vite: 5.4.20(@types/node@24.7.2)
     transitivePeerDependencies:
       - tsx
       - yaml
@@ -4854,7 +4854,7 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  undici-types@6.21.0: {}
+  undici-types@7.14.0: {}
 
   update-browserslist-db@1.1.3(browserslist@4.26.3):
     dependencies:
@@ -4913,13 +4913,13 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vite@5.4.20(@types/node@22.18.10):
+  vite@5.4.20(@types/node@24.7.2):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.6
       rollup: 4.52.4
     optionalDependencies:
-      '@types/node': 22.18.10
+      '@types/node': 24.7.2
       fsevents: 2.3.3
 
   which@2.0.2:
