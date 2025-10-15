@@ -92,7 +92,9 @@ export const Download = () => {
                     variant="ghost"
                     size="sm"
                     onClick={copyToClipboard}
-                    className="h-7 px-2 hover:bg-white/5"
+                    className={`h-7 px-2 hover:bg-white/10 transition-all duration-200 ${
+                      copied ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30' : 'text-foreground/80 hover:text-foreground'
+                    }`}
                   >
                     {copied ? (
                       <Check className="w-3.5 h-3.5" />
