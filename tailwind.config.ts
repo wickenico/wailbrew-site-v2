@@ -54,6 +54,12 @@ export default {
         terminal: {
           bg: "hsl(var(--terminal-bg))",
         },
+        header: {
+          bg: "hsl(var(--header-bg))",
+        },
+        footer: {
+          bg: "hsl(var(--footer-bg))",
+        },
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',

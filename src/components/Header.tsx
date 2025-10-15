@@ -18,7 +18,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-header-bg/95 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img src={logo} alt="WailBrew Logo" className="w-8 h-8" />
@@ -82,7 +82,7 @@ export const Header = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+        <div className="md:hidden border-t border-border bg-header-bg/95 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <button
               onClick={() => scrollToSection("features")}

@@ -44,6 +44,8 @@ All colors MUST be HSL.
     --terminal-bg: 220 25% 8%;
     --code-bg: 220 39% 11%;
     --code-border: 217 33% 25%;
+    --header-bg: 220 39% 8%;
+    --footer-bg: 220 39% 8%;
   }
 }
 
