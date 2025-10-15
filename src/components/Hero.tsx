@@ -3,7 +3,7 @@ import { Download, Github, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import logo from "@/assets/logo.png";
-import screenshot from "@/assets/screenshot-transparent.png";
+import appScreenshot from "@/assets/app-screenshot.png";
 
 export const Hero = () => {
   const [copied, setCopied] = useState(false);
@@ -144,9 +144,9 @@ export const Hero = () => {
 
         <div className="mt-16 mb-12 animate-fade-in">
           <img 
-            src={screenshot} 
+            src={appScreenshot} 
             alt="WailBrew Application Interface" 
-            className="max-w-4xl mx-auto w-full h-auto"
+            className="max-w-5xl mx-auto w-full h-auto rounded-xl"
           />
         </div>
 
