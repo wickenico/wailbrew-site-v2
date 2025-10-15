@@ -41,32 +41,41 @@ export const Hero = () => {
           Experience the power of command-line tools through an intuitive, modern interface.
         </p>
 
-        <div className="bg-terminal-bg border border-border/50 rounded-xl p-6 max-w-2xl mx-auto mb-8 animate-fade-in shadow-2xl">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500" />
-              <div className="w-3 h-3 rounded-full bg-green-500" />
+        <div className="inline-block mx-auto mb-8 animate-fade-in">
+          <div className="bg-terminal-bg border border-border/50 rounded-xl p-5 shadow-2xl hover:shadow-primary/10 transition-shadow duration-300">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={copyToClipboard}
+                className={`h-8 gap-2 hover:bg-white/5 transition-all duration-200 ${
+                  copied ? 'bg-green-500/20 text-green-400' : ''
+                }`}
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    <span className="text-xs font-medium">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    <span className="text-xs font-medium">Copy</span>
+                  </>
+                )}
+              </Button>
             </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={copyToClipboard}
-              className="h-8 gap-2 hover:bg-white/5"
-            >
-              {copied ? (
-                <Check className="w-4 h-4" />
-              ) : (
-                <Copy className="w-4 h-4" />
-              )}
-              {copied ? "Copied!" : "Copy"}
-            </Button>
+            <pre className="overflow-x-auto">
+              <code className="text-sm md:text-base text-accent font-mono block whitespace-pre">
+                {installCommand}
+              </code>
+            </pre>
           </div>
-          <pre className="overflow-x-auto">
-            <code className="text-sm md:text-base text-accent font-mono block">
-              {installCommand}
-            </code>
-          </pre>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-8 animate-fade-in">
