@@ -38,12 +38,6 @@ export const Header = () => {
           >
             Download
           </button>
-          <button
-            onClick={() => scrollToSection("screenshots")}
-            className="text-sm text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Screenshots
-          </button>
           <Button variant="outline" size="sm" asChild>
             <a
               href="https://github.com/wickenico/WailBrew"
@@ -101,12 +95,6 @@ export const Header = () => {
               className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
             >
               Download
-            </button>
-            <button
-              onClick={() => scrollToSection("screenshots")}
-              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
-            >
-              Screenshots
             </button>
             <Button variant="outline" size="sm" className="w-full" asChild>
               <a

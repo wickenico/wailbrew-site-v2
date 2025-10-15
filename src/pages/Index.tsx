@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Homebrew } from "@/components/Homebrew";
 import { Download } from "@/components/Download";
-import { Screenshots } from "@/components/Screenshots";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
@@ -16,7 +15,6 @@ const Index = () => {
         <Features />
         <Homebrew />
         <Download />
-        <Screenshots />
       </main>
       <Footer />
       <ScrollToTop />
