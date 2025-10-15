@@ -1,10 +1,19 @@
-import { Download as DownloadIcon, Terminal, Github, Info } from "lucide-react";
+import { useState } from "react";
+import { Download as DownloadIcon, Terminal, Github, Info, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export const Download = () => {
+  const [copied, setCopied] = useState(false);
+  const brewCommand = "brew tap wickenico/wailbrew\nbrew install --cask wailbrew";
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(brewCommand);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   return (
     <section id="download" className="py-24 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
@@ -19,12 +28,7 @@ export const Download = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <Card className="border-border bg-card relative overflow-hidden">
-            <div className="absolute top-4 right-4">
-              <Badge className="bg-gradient-primary text-white border-0">
-                Recommended
-              </Badge>
-            </div>
+          <Card className="border-border bg-card">
             <CardHeader>
               <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-4">
                 <DownloadIcon className="w-6 h-6 text-white" />
@@ -78,15 +82,28 @@ export const Download = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="bg-code-bg border border-code-border rounded-lg p-4">
-                <div className="flex gap-1.5 mb-3">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={copyToClipboard}
+                    className="h-7 px-2 hover:bg-white/5"
+                  >
+                    {copied ? (
+                      <Check className="w-3.5 h-3.5" />
+                    ) : (
+                      <Copy className="w-3.5 h-3.5" />
+                    )}
+                  </Button>
                 </div>
                 <pre className="text-xs md:text-sm overflow-x-auto">
                   <code className="text-accent font-mono">
-                    brew tap wickenico/wailbrew{"\n"}
-                    brew install --cask wailbrew
+                    {brewCommand}
                   </code>
                 </pre>
               </div>
