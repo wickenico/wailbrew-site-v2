@@ -143,14 +143,11 @@ export const Hero = () => {
         </div>
 
         <div className="mt-16 mb-12 animate-fade-in">
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-primary blur-3xl opacity-20" />
-            <img 
-              src={screenshot} 
-              alt="WailBrew Application Interface" 
-              className="relative rounded-xl shadow-2xl border border-border/50 w-full h-auto"
-            />
-          </div>
+          <img 
+            src={screenshot} 
+            alt="WailBrew Application Interface" 
+            className="max-w-4xl mx-auto w-full h-auto"
+          />
         </div>
 
         <div className="animate-fade-in">
