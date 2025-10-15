@@ -5,6 +5,7 @@ import { Homebrew } from "@/components/Homebrew";
 import { Download } from "@/components/Download";
 import { Screenshots } from "@/components/Screenshots";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
         <Screenshots />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
