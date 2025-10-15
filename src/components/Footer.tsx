@@ -102,15 +102,7 @@ export const Footer = () => {
             </p>
             <p className="flex items-center gap-1">
               Made with <Heart className="w-4 h-4 text-red-500 fill-current" />{" "}
-              by{" "}
-              <a
-                href="https://github.com/wickenico"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition-colors"
-              >
-                @wickenico
-              </a>
+              in Freiburg
             </p>
           </div>
         </div>
