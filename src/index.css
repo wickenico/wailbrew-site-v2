@@ -1,8 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -56,5 +54,92 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Tailwind v4 CSS-based configuration */
+@theme {
+  /* Colors - using HSL format */
+  --color-border: hsl(217 33% 25%);
+  --color-input: hsl(217 33% 25%);
+  --color-ring: hsl(263 70% 65%);
+  --color-background: hsl(222 47% 11%);
+  --color-foreground: hsl(210 40% 98%);
+
+  --color-primary: hsl(263 70% 65%);
+  --color-primary-foreground: hsl(210 40% 98%);
+
+  --color-secondary: hsl(217 33% 17%);
+  --color-secondary-foreground: hsl(210 40% 98%);
+
+  --color-destructive: hsl(0 63% 31%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  --color-muted: hsl(217 33% 20%);
+  --color-muted-foreground: hsl(215 20% 65%);
+
+  --color-accent: hsl(189 95% 52%);
+  --color-accent-foreground: hsl(222 47% 11%);
+
+  --color-popover: hsl(222 47% 11%);
+  --color-popover-foreground: hsl(210 40% 98%);
+
+  --color-card: hsl(217 33% 17%);
+  --color-card-foreground: hsl(210 40% 98%);
+
+  --color-code-bg: hsl(220 39% 11%);
+  --color-code-border: hsl(217 33% 25%);
+
+  --color-terminal-bg: hsl(220 25% 8%);
+
+  --color-header-bg: hsl(220 39% 8%);
+  --color-footer-bg: hsl(220 39% 8%);
+
+  /* Background images */
+  --background-image-gradient-primary: linear-gradient(135deg, hsl(263 70% 65%), hsl(189 95% 52%));
+  --background-image-gradient-hero: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(217 33% 17%) 100%);
+
+  /* Border radius */
+  --radius-lg: 0.75rem;
+  --radius-md: calc(0.75rem - 2px);
+  --radius-sm: calc(0.75rem - 4px);
+
+  /* Container */
+  --container-center: true;
+  --container-padding: 2rem;
+  --breakpoint-2xl: 1400px;
+
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.6s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

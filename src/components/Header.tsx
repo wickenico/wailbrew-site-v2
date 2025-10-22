@@ -28,13 +28,13 @@ export const Header = () => {
         <div className="hidden md:flex items-center gap-6">
           <button
             onClick={() => scrollToSection("features")}
-            className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+            className="text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
           >
             Features
           </button>
           <button
             onClick={() => scrollToSection("download")}
-            className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+            className="text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
           >
             Download
           </button>
@@ -86,13 +86,13 @@ export const Header = () => {
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <button
               onClick={() => scrollToSection("features")}
-              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
+              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
             >
               Features
             </button>
             <button
               onClick={() => scrollToSection("download")}
-              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
+              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
             >
               Download
             </button>

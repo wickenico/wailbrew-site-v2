@@ -27,7 +27,12 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 pt-16 pb-20 bg-gradient-hero overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(151, 103, 228, 0.3), transparent 100%)'
+        }}
+      />
       
       <div className="container mx-auto max-w-5xl text-center relative z-10">
         <div className="flex items-center justify-center gap-4 mb-6 pt-8 md:pt-12 animate-fade-in">
