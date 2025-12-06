@@ -1,13 +1,53 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Download, Github, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import logo from "@/assets/logo.png";
 import appScreenshot from "@/assets/app-screenshot.png";
 
+interface GitHubStats {
+  stars: number | null;
+  forks: number | null;
+  followers: number | null;
+}
+
 export const Hero = () => {
   const [copied, setCopied] = useState(false);
+  const [githubStats, setGithubStats] = useState<GitHubStats>({
+    stars: null,
+    forks: null,
+    followers: null,
+  });
   const installCommand = "brew tap wickenico/wailbrew\nbrew install --cask wailbrew";
+
+  useEffect(() => {
+    const fetchGitHubStats = async () => {
+      try {
+        const repoResponse = await fetch("https://api.github.com/repos/wickenico/WailBrew");
+        if (repoResponse.ok) {
+          const repoData = await repoResponse.json();
+          setGithubStats((prev) => ({
+            ...prev,
+            stars: repoData.stargazers_count || null,
+            forks: repoData.forks_count || null,
+          }));
+        }
+
+        const userResponse = await fetch("https://api.github.com/users/wickenico");
+        if (userResponse.ok) {
+          const userData = await userResponse.json();
+          setGithubStats((prev) => ({
+            ...prev,
+            followers: userData.followers || null,
+          }));
+        }
+      } catch (error) {
+        console.error("Failed to fetch GitHub stats:", error);
+      }
+    };
+
+    fetchGitHubStats();
+  }, []);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(installCommand);
@@ -94,7 +134,9 @@ export const Hero = () => {
             <Badge variant="secondary" className="gap-2">
               <Github className="w-3 h-3" />
               Follow @wickenico
-              <span className="text-muted-foreground">39</span>
+              <span className="text-muted-foreground">
+                {githubStats.followers !== null ? githubStats.followers : "..."}
+              </span>
             </Badge>
           </a>
           <a
@@ -105,7 +147,9 @@ export const Hero = () => {
           >
             <Badge variant="secondary" className="gap-2">
               Fork
-              <span className="text-muted-foreground">38</span>
+              <span className="text-muted-foreground">
+                {githubStats.forks !== null ? githubStats.forks : "..."}
+              </span>
             </Badge>
           </a>
           <a
@@ -116,7 +160,9 @@ export const Hero = () => {
           >
             <Badge variant="secondary" className="gap-2">
               ⭐ Star
-              <span className="text-muted-foreground">738</span>
+              <span className="text-muted-foreground">
+                {githubStats.stars !== null ? githubStats.stars : "..."}
+              </span>
             </Badge>
           </a>
         </div>
