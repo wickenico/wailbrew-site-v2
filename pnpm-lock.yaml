@@ -199,8 +199,8 @@ importers:
         specifier: ^16.5.0
         version: 16.5.0
       lovable-tagger:
-        specifier: ^1.1.11
-        version: 1.1.11(vite@7.2.7(@types/node@24.10.2)(jiti@1.21.7)(lightningcss@1.30.2))
+        specifier: ^1.1.13
+        version: 1.1.13(vite@7.2.7(@types/node@24.10.2)(jiti@1.21.7)(lightningcss@1.30.2))
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -1969,9 +1969,6 @@ packages:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
 
-  estree-walker@3.0.3:
-    resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
-
   esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
@@ -2255,8 +2252,8 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lovable-tagger@1.1.11:
-    resolution: {integrity: sha512-G1gUZi8CebQpB/5+IHWYekRyeRFF2RR7iXSjGO+iVWpwlpa19swgYCYem2z+IkBJO0fKRYJ98xz4yhdt++MzLA==}
+  lovable-tagger@1.1.13:
+    resolution: {integrity: sha512-RBEYDxao7Xf8ya29L0cd+ocE7Gs80xPOIOwwck65Hoie8YDKViuXi3UYV14DoNWIvaJ7WVPf7SG3cc844nFqGA==}
     peerDependencies:
       vite: '>=5.0.0 <8.0.0'
 
@@ -4480,10 +4477,6 @@ snapshots:
 
   estraverse@5.3.0: {}
 
-  estree-walker@3.0.3:
-    dependencies:
-      '@types/estree': 1.0.8
-
   esutils@2.0.3: {}
 
   eventemitter3@5.0.1: {}
@@ -4695,13 +4688,9 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
-  lovable-tagger@1.1.11(vite@7.2.7(@types/node@24.10.2)(jiti@1.21.7)(lightningcss@1.30.2)):
+  lovable-tagger@1.1.13(vite@7.2.7(@types/node@24.10.2)(jiti@1.21.7)(lightningcss@1.30.2)):
     dependencies:
-      '@babel/parser': 7.28.5
-      '@babel/types': 7.28.5
       esbuild: 0.25.12
-      estree-walker: 3.0.3
-      magic-string: 0.30.21
       tailwindcss: 3.4.18
       vite: 7.2.7(@types/node@24.10.2)(jiti@1.21.7)(lightningcss@1.30.2)
     transitivePeerDependencies:
