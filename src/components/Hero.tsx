@@ -18,7 +18,7 @@ export const Hero = () => {
     forks: null,
     followers: null,
   });
-  const installCommand = "brew tap wickenico/wailbrew\nbrew install --cask wailbrew";
+  const installCommand = "brew install --cask wailbrew";
 
   useEffect(() => {
     const fetchGitHubStats = async () => {
