@@ -7,7 +7,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export const Download = () => {
   const [copied, setCopied] = useState(false);
-  const brewCommand = "brew tap wickenico/wailbrew\nbrew install --cask wailbrew";
+  const brewCommand = "brew install --cask wailbrew";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(brewCommand);
