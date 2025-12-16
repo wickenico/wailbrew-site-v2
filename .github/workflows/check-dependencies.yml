@@ -1,0 +1,40 @@
+name: Check Dependencies
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies with frozen lockfile
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify lockfile is up to date
+        run: |
+          pnpm install --lockfile-only
+          if [ -n "$(git status --porcelain pnpm-lock.yaml)" ]; then
+            echo "❌ pnpm-lock.yaml is out of sync with package.json"
+            echo "Run 'pnpm install' locally and commit the updated lockfile"
+            git diff pnpm-lock.yaml
+            exit 1
+          fi
+          echo "✅ Lockfile is up to date"
+
