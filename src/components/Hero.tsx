@@ -9,6 +9,7 @@ interface GitHubStats {
   stars: number | null;
   forks: number | null;
   followers: number | null;
+  version: string | null;
 }
 
 export const Hero = () => {
@@ -17,6 +18,7 @@ export const Hero = () => {
     stars: null,
     forks: null,
     followers: null,
+    version: null,
   });
   const installCommand = "brew install --cask wailbrew";
 
@@ -39,6 +41,15 @@ export const Hero = () => {
           setGithubStats((prev) => ({
             ...prev,
             followers: userData.followers || null,
+          }));
+        }
+
+        const releaseResponse = await fetch("https://api.github.com/repos/wickenico/WailBrew/releases/latest");
+        if (releaseResponse.ok) {
+          const releaseData = await releaseResponse.json();
+          setGithubStats((prev) => ({
+            ...prev,
+            version: releaseData.tag_name || null,
           }));
         }
       } catch (error) {
@@ -125,6 +136,16 @@ export const Hero = () => {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-8 animate-fade-in">
+          <a
+            href="https://github.com/wickenico/WailBrew/releases/latest"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
+          >
+            <Badge variant="secondary" className="gap-2 bg-primary/20 border-primary/30">
+              🏷️ {githubStats.version !== null ? githubStats.version : "..."}
+            </Badge>
+          </a>
           <a
             href="https://github.com/wickenico"
             target="_blank"
