@@ -2,3 +2,7 @@ packages: []
 
 ignoredBuiltDependencies:
   - '@vercel/speed-insights'
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
