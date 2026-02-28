@@ -1,5 +1,5 @@
 import { Github, Heart } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 export const Footer = () => {
   return (
@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="WailBrew" className="w-8 h-8" />
+              <img src={logo} alt="WailBrew" width={32} height={32} className="w-8 h-8" />
               <span className="text-xl font-bold">WailBrew</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">

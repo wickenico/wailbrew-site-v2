@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Download, Github, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import logo from "@/assets/logo.png";
-import appScreenshot from "@/assets/app-screenshot.png";
+import logo from "@/assets/logo.webp";
+import appScreenshot from "@/assets/app-screenshot.webp";
 
 interface GitHubStats {
   stars: number | null;
@@ -87,7 +87,7 @@ export const Hero = () => {
       
       <div className="container mx-auto max-w-5xl text-center relative z-10">
         <div className="flex items-center justify-center gap-4 mb-6 pt-8 md:pt-12 animate-fade-in">
-          <img src={logo} alt="WailBrew" className="w-20 h-20 md:w-24 md:h-24" />
+          <img src={logo} alt="WailBrew" width={96} height={96} className="w-20 h-20 md:w-24 md:h-24" />
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent pb-2">
             WailBrew
           </h1>
@@ -218,6 +218,10 @@ export const Hero = () => {
           <img 
             src={appScreenshot} 
             alt="WailBrew Application Interface" 
+            loading="lazy"
+            decoding="async"
+            width={2428}
+            height={1874}
             className="max-w-5xl mx-auto w-full h-auto rounded-xl"
           />
         </div>

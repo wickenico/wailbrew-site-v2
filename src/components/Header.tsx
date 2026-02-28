@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-header-bg/95 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="WailBrew Logo" className="w-8 h-8" />
+          <img src={logo} alt="WailBrew Logo" width={32} height={32} className="w-8 h-8" />
           <span className="text-xl font-bold">WailBrew</span>
         </div>
 
