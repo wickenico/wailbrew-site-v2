@@ -1,4 +1,5 @@
 import { Github, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.webp";
 
 export const Footer = () => {
@@ -100,10 +101,24 @@ export const Footer = () => {
               © {new Date().getFullYear()} WailBrew. Open source under MIT
               License.
             </p>
-            <p className="flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-current" />{" "}
-              in Freiburg
-            </p>
+            <div className="flex items-center gap-4">
+              <Link
+                to="/about"
+                className="hover:text-foreground transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                to="/privacy"
+                className="hover:text-foreground transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <p className="flex items-center gap-1">
+                Made with <Heart className="w-4 h-4 text-red-500 fill-current" />{" "}
+                in Freiburg
+              </p>
+            </div>
           </div>
         </div>
       </div>
