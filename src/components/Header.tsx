@@ -39,6 +39,14 @@ export const Header = () => {
           >
             Download
           </button>
+          <a
+            href="https://github.com/sponsors/wickenico"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+          >
+            Sponsor
+          </a>
           <Button variant="outline" size="sm" asChild>
             <a
               href="https://github.com/wickenico/WailBrew"
@@ -97,6 +105,15 @@ export const Header = () => {
             >
               Download
             </button>
+            <a
+              href="https://github.com/sponsors/wickenico"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sponsor
+            </a>
             <Button variant="outline" size="sm" className="w-full" asChild>
               <a
                 href="https://github.com/wickenico/WailBrew"
