@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Github, Heart, Package, Shield, Zap } from "lucide-react";
+import { Heart, Package, Shield, Zap } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import logo from "@/assets/logo.webp";
@@ -128,7 +129,7 @@ const About = () => {
             <h2 className="text-xl font-semibold mb-4">The Developer</h2>
             <div className="p-5 rounded-lg bg-card border border-border flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                <Github className="w-6 h-6 text-primary" />
+                <GithubIcon className="w-6 h-6 text-primary" />
               </div>
               <div>
                 <h3 className="font-semibold text-base">Nico Wickersheim</h3>
@@ -147,7 +148,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
                 >
-                  <Github className="w-4 h-4" />
+                  <GithubIcon className="w-4 h-4" />
                   github.com/wickenico
                 </a>
               </div>
@@ -192,7 +193,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border text-sm hover:border-primary transition-colors"
               >
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
                 View on GitHub
               </a>
               <a

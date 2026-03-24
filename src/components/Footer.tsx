@@ -1,4 +1,5 @@
-import { Github, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.webp";
 
@@ -74,7 +75,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
-                  <Github className="w-4 h-4" />
+                  <GithubIcon className="w-4 h-4" />
                   GitHub
                 </a>
               </li>

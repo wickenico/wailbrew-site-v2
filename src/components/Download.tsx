@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Download as DownloadIcon, Terminal, Github, Info, Copy, Check } from "lucide-react";
+import { Download as DownloadIcon, Terminal, Info, Copy, Check } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -129,7 +130,7 @@ export const Download = () => {
           <Card className="border-border bg-card">
             <CardHeader>
               <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4">
-                <Github className="w-6 h-6 text-foreground" />
+                <GithubIcon className="w-6 h-6 text-foreground" />
               </div>
               <CardTitle className="text-xl">Build from Source</CardTitle>
               <CardDescription className="text-base">
@@ -154,7 +155,7 @@ export const Download = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"
                 >
-                  <Github className="w-4 h-4" />
+                  <GithubIcon className="w-4 h-4" />
                   View on GitHub
                 </a>
               </Button>

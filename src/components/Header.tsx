@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.webp";
@@ -54,7 +54,7 @@ export const Header = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
-              <Github className="w-4 h-4" />
+              <GithubIcon className="w-4 h-4" />
               GitHub
             </a>
           </Button>
@@ -121,7 +121,7 @@ export const Header = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
                 GitHub
               </a>
             </Button>

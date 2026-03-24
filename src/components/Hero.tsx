@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Download, Github, Copy, Check } from "lucide-react";
+import { Download, Copy, Check } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import logo from "@/assets/logo.webp";
@@ -153,7 +154,7 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
           >
             <Badge variant="secondary" className="gap-2">
-              <Github className="w-3 h-3" />
+              <GithubIcon className="w-3 h-3" />
               Follow @wickenico
               <span className="text-muted-foreground">
                 {githubStats.followers !== null ? githubStats.followers : "..."}
@@ -208,7 +209,7 @@ export const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="w-5 h-5" />
+              <GithubIcon className="w-5 h-5" />
               View on GitHub
             </a>
           </Button>
