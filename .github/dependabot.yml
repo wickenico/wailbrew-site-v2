@@ -4,7 +4,71 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      radix-ui:
+        patterns:
+          - "@radix-ui/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      tailwindcss:
+        patterns:
+          - "tailwindcss"
+          - "tailwindcss-animate"
+          - "tailwind-merge"
+          - "@tailwindcss/*"
+          - "autoprefixer"
+          - "postcss"
+      eslint:
+        patterns:
+          - "eslint"
+          - "eslint-plugin-*"
+          - "@eslint/*"
+          - "typescript-eslint"
+      vercel:
+        patterns:
+          - "@vercel/*"
+      build-tools:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+          - "typescript"
+          - "@types/node"
+          - "globals"
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+        exclude-patterns:
+          - "@radix-ui/*"
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+          - "tailwindcss"
+          - "tailwindcss-animate"
+          - "tailwind-merge"
+          - "@tailwindcss/*"
+          - "autoprefixer"
+          - "postcss"
+          - "eslint"
+          - "eslint-plugin-*"
+          - "@eslint/*"
+          - "typescript-eslint"
+          - "@vercel/*"
+          - "vite"
+          - "@vitejs/*"
+          - "typescript"
+          - "@types/node"
+          - "globals"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
