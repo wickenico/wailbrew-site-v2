@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@hookform/resolvers':
         specifier: ^3.10.0
-        version: 3.10.0(react-hook-form@7.74.0(react@19.2.5))
+        version: 3.10.0(react-hook-form@7.75.0(react@19.2.5))
       '@radix-ui/react-accordion':
         specifier: ^1.2.12
         version: 1.2.12(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -93,8 +93,8 @@ importers:
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@tanstack/react-query':
-        specifier: ^5.100.6
-        version: 5.100.6(react@19.2.5)
+        specifier: ^5.100.7
+        version: 5.100.7(react@19.2.5)
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(react@19.2.5)
@@ -135,8 +135,8 @@ importers:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
       react-hook-form:
-        specifier: ^7.74.0
-        version: 7.74.0(react@19.2.5)
+        specifier: ^7.75.0
+        version: 7.75.0(react@19.2.5)
       react-resizable-panels:
         specifier: ^4.10.0
         version: 4.10.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -159,8 +159,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       zod:
-        specifier: ^4.4.1
-        version: 4.4.1
+        specifier: ^4.4.2
+        version: 4.4.2
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -1355,11 +1355,11 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
 
-  '@tanstack/query-core@5.100.6':
-    resolution: {integrity: sha512-Os2CPUr98to98RYm+D4qGqGkiffn7MGSyl2547a4MljVkHE30AMJRqTiyCqBfMwzAx/I91vCkAxp5tHSla6Twg==}
+  '@tanstack/query-core@5.100.7':
+    resolution: {integrity: sha512-5R7i6ENJLhVeeJrrUz7jKBXUXv/BJrxf9FQJSkR13bPrb3zOcE8A0Z0PxYCcsKPOsiIlTibrBL/zZbtUO1TFyQ==}
 
-  '@tanstack/react-query@5.100.6':
-    resolution: {integrity: sha512-uVSrps0PV16Cxmcn2rvL+dUhwTpTUtiRW347AEeYxMZXO2pZe9ja7E24PAMGoQ5u2g89DD8u4QhOviBk+RN8RA==}
+  '@tanstack/react-query@5.100.7':
+    resolution: {integrity: sha512-LoISYWz8dOOuQbeIctF8K6yi42TWtR1WPGpwGuRUpF3u79JVVIg/PVR0MQdIA0VSHqD/ydf/b7PhKTkg3I4fLQ==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -2076,8 +2076,8 @@ packages:
     peerDependencies:
       react: ^19.2.5
 
-  react-hook-form@7.74.0:
-    resolution: {integrity: sha512-yR6wHr99p9wFv686jhRWVSFhUvDvNbdUf2dKlbno8/VKOCuoNobDGC6S+M2dua9A9Yo8vpcrp8assIYbsZCQ9g==}
+  react-hook-form@7.75.0:
+    resolution: {integrity: sha512-Ovv94H+0p3sJ7B9B5QxPuCP1u8V/cHuVGyH55cSwodYDtoJwK+fqk3vjfIgSX59I2U/bU4z0nRJ9HMLpNiWEmw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -2372,8 +2372,8 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod@4.4.1:
-    resolution: {integrity: sha512-a6ENMBBGZBsnlSebQ/eKCguSBeGKSf4O7BPnqVPmYGtpBYI7VSqoVqw+QcB7kPRjbqPwhYTpFbVj/RqNz/CT0Q==}
+  zod@4.4.2:
+    resolution: {integrity: sha512-IynmDyxsEsb9RKzO3J9+4SxXnl2FTFSzNBaKKaMV6tsSk0rw9gYw9gs+JFCq/qk2LCZ78KDwyj+Z289TijSkUw==}
 
 snapshots:
 
@@ -2548,9 +2548,9 @@ snapshots:
 
   '@floating-ui/utils@0.2.11': {}
 
-  '@hookform/resolvers@3.10.0(react-hook-form@7.74.0(react@19.2.5))':
+  '@hookform/resolvers@3.10.0(react-hook-form@7.75.0(react@19.2.5))':
     dependencies:
-      react-hook-form: 7.74.0(react@19.2.5)
+      react-hook-form: 7.75.0(react@19.2.5)
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -3496,11 +3496,11 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.2.4
 
-  '@tanstack/query-core@5.100.6': {}
+  '@tanstack/query-core@5.100.7': {}
 
-  '@tanstack/react-query@5.100.6(react@19.2.5)':
+  '@tanstack/react-query@5.100.7(react@19.2.5)':
     dependencies:
-      '@tanstack/query-core': 5.100.6
+      '@tanstack/query-core': 5.100.7
       react: 19.2.5
 
   '@tybys/wasm-util@0.10.1':
@@ -3820,8 +3820,8 @@ snapshots:
       '@babel/parser': 7.29.2
       eslint: 10.2.1(jiti@2.6.1)
       hermes-parser: 0.25.1
-      zod: 4.4.1
-      zod-validation-error: 4.0.2(zod@4.4.1)
+      zod: 4.4.2
+      zod-validation-error: 4.0.2(zod@4.4.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -4131,7 +4131,7 @@ snapshots:
       react: 19.2.5
       scheduler: 0.27.0
 
-  react-hook-form@7.74.0(react@19.2.5):
+  react-hook-form@7.75.0(react@19.2.5):
     dependencies:
       react: 19.2.5
 
@@ -4385,8 +4385,8 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-validation-error@4.0.2(zod@4.4.1):
+  zod-validation-error@4.0.2(zod@4.4.2):
     dependencies:
-      zod: 4.4.1
+      zod: 4.4.2
 
-  zod@4.4.1: {}
+  zod@4.4.2: {}
