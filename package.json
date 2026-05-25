@@ -74,7 +74,7 @@
     "@eslint/js": "^10.0.1",
     "@tailwindcss/postcss": "4.3.0",
     "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^25.9.0",
+    "@types/node": "^25.9.1",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.1",
@@ -87,6 +87,6 @@
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.4",
-    "vite": "^8.0.13"
+    "vite": "^8.0.14"
   }
 }
