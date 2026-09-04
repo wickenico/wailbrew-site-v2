@@ -4,7 +4,7 @@ import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import logo from "@/assets/logo.webp";
-import appScreenshot from "@/assets/app-screenshot.webp";
+import demoGif from "@/assets/demo.gif";
 
 interface GitHubStats {
   stars: number | null;
@@ -216,14 +216,14 @@ export const Hero = () => {
         </div>
 
         <div className="mt-16 mb-12 animate-fade-in">
-          <img 
-            src={appScreenshot} 
-            alt="WailBrew Application Interface" 
+          <img
+            src={demoGif}
+            alt="WailBrew Application Demo"
             loading="lazy"
             decoding="async"
-            width={2428}
-            height={1874}
-            className="max-w-5xl mx-auto w-full h-auto rounded-xl"
+            width={720}
+            height={450}
+            className="max-w-3xl mx-auto w-full h-auto rounded-xl shadow-2xl"
           />
         </div>
 
