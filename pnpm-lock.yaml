@@ -93,8 +93,8 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@tanstack/react-query':
-        specifier: ^5.104.3
-        version: 5.104.3(react@19.3.1)
+        specifier: ^5.104.4
+        version: 5.104.4(@types/react@19.3.0)(react@19.3.1)
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(react@19.3.1)
@@ -138,8 +138,8 @@ importers:
         specifier: ^7.90.0
         version: 7.90.0(@types/react@19.3.0)(react@19.3.1)
       react-resizable-panels:
-        specifier: ^4.14.5
-        version: 4.14.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: ^4.14.6
+        version: 4.14.6(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react-router-dom:
         specifier: ^7.18.4
         version: 7.18.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -1447,13 +1447,17 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || >=4.0.0 || insiders'
 
-  '@tanstack/query-core@5.104.3':
-    resolution: {integrity: sha512-DZY9TuJAOgU3UyHUhXb4CcTYEHNZszlwkPg4VViIwTxOKzLprPUU+rbaPZQd3srqkGOtpaDdKpW972UV/LKlcg==}
+  '@tanstack/query-core@5.104.4':
+    resolution: {integrity: sha512-nU4Yrb8Sjn0DeVb7PKG9uiepNavys3yoxy1FX0hViY4/P6Ng/mBje2SMl7i9812rtyHKtHyqiaC/td6GkI8StA==}
 
-  '@tanstack/react-query@5.104.3':
-    resolution: {integrity: sha512-5Ts1ImwJKqoJgPkLxl9WrPQy1JEoEmti3MaaODCfBamHUGFk57IFrc+AIksPq+BAm10EsroX56qm398Z42LG7w==}
+  '@tanstack/react-query@5.104.4':
+    resolution: {integrity: sha512-YD5QkvUNy8Ey3LbOy2vwL97JjoYycwDv++cWAibTe+9BLYvl3c09XpYp5dZ2VcxcguwoDhGF+utYJYb79RB36w==}
     peerDependencies:
+      '@types/react': ^18 || ^19
       react: ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@types/d3-array@3.2.2':
     resolution: {integrity: sha512-hOLWVbm7uRza0BYXpIIW5pxfrKe0W+D5lrFiAEYR+pb6w3N2SwSMaJbXdUfSEv+dT4MfHBLtn5js0LAWaO6otw==}
@@ -2423,8 +2427,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-resizable-panels@4.14.5:
-    resolution: {integrity: sha512-AoHgoq3sGOfciPn2ahddFrBCqsitZLse8cJIYWblvE3kQ9z39IrhdlHCjnVRrDL8XcWqvA0u/t9nLZTfWePJ5A==}
+  react-resizable-panels@4.14.6:
+    resolution: {integrity: sha512-YqkTuTDV1ncknnR5YN/iI8icpClippc9/10job9zJIppt2r8yUwaVfVxhzFNO+3DIxrnAwhcMMs1FdX5xt9C9A==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -3814,12 +3818,14 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.3.3
 
-  '@tanstack/query-core@5.104.3': {}
+  '@tanstack/query-core@5.104.4': {}
 
-  '@tanstack/react-query@5.104.3(react@19.3.1)':
+  '@tanstack/react-query@5.104.4(@types/react@19.3.0)(react@19.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.104.3
+      '@tanstack/query-core': 5.104.4
       react: 19.3.1
+    optionalDependencies:
+      '@types/react': 19.3.0
 
   '@types/d3-array@3.2.2': {}
 
@@ -4606,7 +4612,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.3.0
 
-  react-resizable-panels@4.14.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
+  react-resizable-panels@4.14.6(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
