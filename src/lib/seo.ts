@@ -37,6 +37,11 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "Practical Homebrew guides: update and uninstall packages, free up disk space, manage services, understand casks and back up your setup with a Brewfile.",
   },
+  "/sponsor": {
+    title: "Support WailBrew – Sponsor the Free Homebrew GUI for macOS",
+    description:
+      "WailBrew is free, open source and built in spare time. Sponsor it on GitHub, buy a coffee on Ko-fi or help for free with a star, a bug report or a translation.",
+  },
   ...Object.fromEntries(
     guides.map((guide) => [
       guidePath(guide.slug),

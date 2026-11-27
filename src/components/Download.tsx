@@ -1,4 +1,4 @@
-import { Check, Copy, Download as DownloadIcon, Info, Terminal } from "lucide-react";
+import { Check, Copy, Download as DownloadIcon, Heart, Info, Terminal } from "lucide-react";
 import { useState } from "react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -179,6 +179,18 @@ export const Download = () => {
             </Button>
           </AlertDescription>
         </Alert>
+
+        <p className="max-w-3xl mx-auto mt-8 text-center text-sm text-muted-foreground">
+          <Heart className="inline w-4 h-4 mr-1.5 -mt-0.5 text-red-500 fill-current" aria-hidden="true" />
+          WailBrew is free and built in spare time. If it saves you time,{" "}
+          <a
+            href="/sponsor"
+            className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
+          >
+            consider supporting it
+          </a>
+          .
+        </p>
       </div>
     </section>
   );

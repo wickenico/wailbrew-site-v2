@@ -69,6 +69,15 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
+                  href="/sponsor"
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+                >
+                  <Heart className="w-4 h-4" aria-hidden="true" />
+                  Support WailBrew
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://github.com/wickenico"
                   target="_blank"
                   rel="noopener noreferrer"
