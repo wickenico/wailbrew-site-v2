@@ -23,7 +23,10 @@ const Changelog = () => (
     {releases.length === 0 ? (
       <p className="text-muted-foreground">
         The release notes are available on{" "}
-        <a href={RELEASES_URL} className="text-primary hover:underline">
+        <a
+          href={RELEASES_URL}
+          className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
+        >
           GitHub
         </a>
         .
@@ -68,7 +71,12 @@ const Changelog = () => (
     {releases.length > 0 && (
       <p className="mt-12 text-sm text-muted-foreground">
         Looking for older versions? See all releases on{" "}
-        <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+        <a
+          href={RELEASES_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
+        >
           GitHub
         </a>
         .

@@ -46,7 +46,7 @@ const Privacy = () => {
                     href="https://github.com/wickenico"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline"
+                    className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                   >
                     github.com/wickenico
                   </a>
@@ -84,7 +84,7 @@ const Privacy = () => {
                   href="https://vercel.com/legal/privacy-policy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   vercel.com/legal/privacy-policy
                 </a>
@@ -113,7 +113,7 @@ const Privacy = () => {
                   href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   GitHub Privacy Statement
                 </a>
@@ -158,7 +158,7 @@ const Privacy = () => {
                   href="https://github.com/wickenico"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   GitHub
                 </a>
@@ -168,7 +168,7 @@ const Privacy = () => {
                   href="https://www.bfdi.bund.de"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   Bundesbeauftragte für den Datenschutz und die Informationsfreiheit
                 </a>

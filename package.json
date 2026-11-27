@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@12.18.0",
   "scripts": {
     "dev": "node scripts/fetch-releases.mjs --if-missing && vite",
     "build": "node scripts/fetch-releases.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
@@ -10,6 +11,7 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit",
     "og:guides": "node scripts/generate-og-images.mjs",
     "preview": "vite preview"
   },

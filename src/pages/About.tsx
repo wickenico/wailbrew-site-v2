@@ -39,7 +39,7 @@ const About = () => {
                 href="https://brew.sh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
               >
                 Homebrew
               </a>
@@ -98,7 +98,7 @@ const About = () => {
                     href="https://wails.io"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline"
+                    className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                   >
                     Wails
                   </a>{" "}
@@ -142,7 +142,7 @@ const About = () => {
                   href="https://github.com/wickenico"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+                  className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   <GithubIcon className="w-4 h-4" />
                   github.com/wickenico
@@ -165,7 +165,7 @@ const About = () => {
                   href="https://github.com/wickenico"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   github.com/wickenico
                 </a>

@@ -89,6 +89,7 @@ export const Download = () => {
                     variant="ghost"
                     size="sm"
                     onClick={copyToClipboard}
+                    aria-label={copied ? "Copied" : "Copy install command"}
                     className={`h-7 px-2 hover:bg-white/10 transition-all duration-200 ${
                       copied
                         ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
@@ -165,7 +166,7 @@ export const Download = () => {
                 href="https://brew.sh/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline font-medium"
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary font-medium"
               >
                 brew.sh
               </a>{" "}

@@ -13,7 +13,7 @@ export const Faq = () => {
               href="https://www.reddit.com/r/WailBrew"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
             >
               r/WailBrew
             </a>{" "}
@@ -22,7 +22,7 @@ export const Faq = () => {
               href="https://github.com/wickenico/WailBrew/issues"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
             >
               open an issue
             </a>

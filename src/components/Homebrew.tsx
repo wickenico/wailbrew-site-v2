@@ -21,7 +21,7 @@ export const Homebrew = () => {
                 href="https://brew.sh/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline font-medium"
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary font-medium"
               >
                 brew.sh
               </a>
@@ -29,19 +29,31 @@ export const Homebrew = () => {
             </p>
             <p className="text-base text-muted-foreground mb-8 leading-relaxed">
               Want to understand what's going on under the hood? Our{" "}
-              <a href="/guides" className="text-primary hover:underline font-medium">
+              <a
+                href="/guides"
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary font-medium"
+              >
                 Homebrew guides
               </a>{" "}
               explain{" "}
-              <a href={guidePath("homebrew-formula-vs-cask")} className="text-primary hover:underline">
+              <a
+                href={guidePath("homebrew-formula-vs-cask")}
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
+              >
                 formulae vs. casks
               </a>
               ,{" "}
-              <a href={guidePath("update-homebrew-packages")} className="text-primary hover:underline">
+              <a
+                href={guidePath("update-homebrew-packages")}
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
+              >
                 updating packages
               </a>{" "}
               and{" "}
-              <a href={guidePath("homebrew-cleanup")} className="text-primary hover:underline">
+              <a
+                href={guidePath("homebrew-cleanup")}
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
+              >
                 freeing up disk space
               </a>
               .

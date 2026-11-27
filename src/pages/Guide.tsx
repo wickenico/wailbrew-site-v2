@@ -36,7 +36,10 @@ const Guide = ({ slug }: { slug: string }) => {
         <ul className="space-y-3">
           {otherGuides.map((entry) => (
             <li key={entry.slug}>
-              <a href={guidePath(entry.slug)} className="text-primary hover:underline">
+              <a
+                href={guidePath(entry.slug)}
+                className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
+              >
                 {entry.title}
               </a>
             </li>

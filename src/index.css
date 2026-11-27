@@ -15,7 +15,7 @@ All colors MUST be HSL.
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 263 70% 65%;
+    --primary: 263 70% 72%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217 33% 17%;
@@ -32,7 +32,7 @@ All colors MUST be HSL.
 
     --border: 217 33% 25%;
     --input: 217 33% 25%;
-    --ring: 263 70% 65%;
+    --ring: 263 70% 72%;
 
     --radius: 0.75rem;
 
@@ -59,12 +59,6 @@ All colors MUST be HSL.
   section[id] {
     scroll-margin-top: 5rem;
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .animate-fade-in {
-      animation: none;
-    }
-  }
 }
 
 @layer components {
@@ -90,7 +84,7 @@ All colors MUST be HSL.
     @apply list-decimal pl-6 mb-4 space-y-1.5;
   }
   .article a {
-    @apply text-primary underline-offset-2 hover:underline;
+    @apply text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary;
   }
   .article strong {
     @apply font-semibold text-foreground;
@@ -127,11 +121,11 @@ All colors MUST be HSL.
   /* Colors - using HSL format */
   --color-border: hsl(217 33% 25%);
   --color-input: hsl(217 33% 25%);
-  --color-ring: hsl(263 70% 65%);
+  --color-ring: hsl(263 70% 72%);
   --color-background: hsl(222 47% 11%);
   --color-foreground: hsl(210 40% 98%);
 
-  --color-primary: hsl(263 70% 65%);
+  --color-primary: hsl(263 70% 72%);
   --color-primary-foreground: hsl(210 40% 98%);
 
   --color-secondary: hsl(217 33% 17%);
@@ -173,38 +167,4 @@ All colors MUST be HSL.
   --container-center: true;
   --container-padding: 2rem;
   --breakpoint-2xl: 1400px;
-
-  /* Animations */
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-  --animate-fade-in: fade-in 0.6s ease-out;
-}
-
-@keyframes accordion-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
-}
-
-@keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

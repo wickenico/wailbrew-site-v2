@@ -81,7 +81,7 @@ export const Hero = () => {
           href="https://github.com/wickenico/WailBrew/releases/latest"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mb-8 hover:opacity-80 transition-opacity animate-fade-in"
+          className="inline-block mb-8 hover:opacity-80 transition-opacity"
         >
           <Badge variant="secondary" className="gap-2 bg-primary/15 border-primary/30 px-3 py-1 text-xs md:text-sm">
             Free &amp; open source
@@ -90,22 +90,22 @@ export const Hero = () => {
           </Badge>
         </a>
 
-        <div className="flex justify-center mb-6 animate-fade-in">
+        <div className="flex justify-center mb-6">
           <img src={logo} alt="" width={96} height={96} className="w-16 h-16 md:w-20 md:h-20" />
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 animate-fade-in">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           <span className="sr-only">WailBrew – </span>
           The <span className="bg-gradient-primary bg-clip-text text-transparent">Homebrew GUI</span>
           <br className="hidden sm:block" /> for your Mac
         </h1>
 
-        <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in">
+        <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed">
           WailBrew lets you install, update and clean up formulae, casks and services without memorizing a single{" "}
           <code className="font-mono text-accent">brew</code> command. Native on Apple Silicon and Intel.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto mb-8 animate-fade-in">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto mb-8">
           <Button
             size="lg"
             className="bg-gradient-primary hover:opacity-90 transition-opacity text-white border-0 gap-2 w-full sm:w-auto sm:min-w-[220px]"
@@ -126,7 +126,7 @@ export const Hero = () => {
           </Button>
         </div>
 
-        <div className="inline-block max-w-full mx-auto mb-4 animate-fade-in">
+        <div className="inline-block max-w-full mx-auto mb-4">
           <div className="flex items-center gap-2 sm:gap-3 bg-terminal-bg border border-border/50 rounded-xl pl-3 sm:pl-4 md:pl-5 pr-2 py-2 shadow-2xl">
             <span className="text-xs sm:text-sm md:text-base text-muted-foreground font-mono select-none">$</span>
             <code className="text-xs sm:text-sm md:text-base text-accent font-mono whitespace-nowrap overflow-x-auto">
@@ -149,11 +149,11 @@ export const Hero = () => {
           </div>
         </div>
 
-        <p className="text-sm text-muted-foreground mb-14 animate-fade-in">
+        <p className="text-sm text-muted-foreground mb-14">
           macOS 12+ · Apple Silicon &amp; Intel · Signed &amp; notarized · 12 languages
         </p>
 
-        <div className="mb-14 animate-fade-in">
+        <div className="mb-14">
           <video
             ref={videoRef}
             controls={showVideoControls}
@@ -171,7 +171,7 @@ export const Hero = () => {
           </video>
         </div>
 
-        <div className="animate-fade-in">
+        <div>
           <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Featured in</p>
           <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {featuredIn.map((outlet) => (
