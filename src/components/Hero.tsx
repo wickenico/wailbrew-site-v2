@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from "react";
-import { Download, Copy, Check, Star } from "lucide-react";
-import { GithubIcon } from "@/components/icons/GithubIcon";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { scrollToSection } from "@/lib/scroll";
-import logo from "@/assets/logo.webp";
+import { Check, Copy, Download, Star } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import demoMp4 from "@/assets/demo.mp4";
 import demoWebm from "@/assets/demo.webm";
 import demoPoster from "@/assets/demo-poster.jpg";
+import logo from "@/assets/logo.webp";
+import { GithubIcon } from "@/components/icons/GithubIcon";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { scrollToSection } from "@/lib/scroll";
 
 const FALLBACK_STARS = "2.8k+";
 
@@ -72,7 +72,7 @@ export const Hero = () => {
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(151, 103, 228, 0.3), transparent 100%)'
+          background: "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(151, 103, 228, 0.3), transparent 100%)",
         }}
       />
 
@@ -101,9 +101,8 @@ export const Hero = () => {
         </h1>
 
         <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-          WailBrew lets you install, update and clean up formulae, casks and services
-          without memorizing a single <code className="font-mono text-accent">brew</code> command.
-          Native on Apple Silicon and Intel.
+          WailBrew lets you install, update and clean up formulae, casks and services without memorizing a single{" "}
+          <code className="font-mono text-accent">brew</code> command. Native on Apple Silicon and Intel.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto mb-8 animate-fade-in">
@@ -116,11 +115,7 @@ export const Hero = () => {
             Download for macOS
           </Button>
           <Button variant="outline" size="lg" className="gap-2 w-full sm:w-auto sm:min-w-[220px]" asChild>
-            <a
-              href="https://github.com/wickenico/WailBrew"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/wickenico/WailBrew" target="_blank" rel="noopener noreferrer">
               <GithubIcon className="w-5 h-5" />
               Star on GitHub
               <span className="flex items-center gap-1 text-muted-foreground">
@@ -143,7 +138,9 @@ export const Hero = () => {
               onClick={copyToClipboard}
               aria-label="Copy install command"
               className={`h-8 gap-2 hover:bg-white/10 transition-all duration-200 ${
-                copied ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30' : 'text-foreground/80 hover:text-foreground'
+                copied
+                  ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
+                  : "text-foreground/80 hover:text-foreground"
               }`}
             >
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
@@ -175,9 +172,7 @@ export const Hero = () => {
         </div>
 
         <div className="animate-fade-in">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
-            Featured in
-          </p>
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Featured in</p>
           <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {featuredIn.map((outlet) => (
               <li key={outlet.name}>

@@ -1,14 +1,14 @@
 import { ArrowRight } from "lucide-react";
-import { PageLayout } from "@/components/PageLayout";
 import { DownloadCta } from "@/components/DownloadCta";
-import { guides, guidePath } from "@/content/guides";
+import { PageLayout } from "@/components/PageLayout";
+import { guidePath, guides } from "@/content/guides";
 
 const Guides = () => (
   <PageLayout breadcrumbs={[{ label: "Home", href: "/" }, { label: "Guides" }]}>
     <h1 className="text-3xl md:text-4xl font-bold mb-4">Homebrew guides</h1>
     <p className="text-lg text-muted-foreground mb-10">
-      Short, practical guides to everyday Homebrew tasks on macOS, with the terminal commands and
-      how to do the same in WailBrew.
+      Short, practical guides to everyday Homebrew tasks on macOS, with the terminal commands and how to do the same in
+      WailBrew.
     </p>
 
     <ul className="grid gap-4">

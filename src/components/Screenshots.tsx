@@ -1,11 +1,11 @@
-import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useRef } from "react";
 import screenshotMain from "@/assets/Screenshot.webp";
-import screenshotLight from "@/assets/screenshot-light.webp";
 import screenshotCasks from "@/assets/screenshot-casks.webp";
-import screenshotServices from "@/assets/screenshot-services.webp";
 import screenshotDoctor from "@/assets/screenshot-doctor.webp";
+import screenshotLight from "@/assets/screenshot-light.webp";
+import screenshotServices from "@/assets/screenshot-services.webp";
+import { Button } from "@/components/ui/button";
 
 const screenshots = [
   {
@@ -36,7 +36,7 @@ const screenshots = [
 ];
 
 export const Screenshots = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLElement>(null);
 
   const scroll = (direction: 1 | -1) => {
     const track = trackRef.current;
@@ -56,19 +56,17 @@ export const Screenshots = () => {
     <section id="screenshots" className="py-24 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            See it in action
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">See it in action</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Formulae, casks, services and diagnostics, all in one native macOS app.
           </p>
         </div>
 
         <div className="relative mx-auto max-w-4xl">
-          <div
+          <section
             ref={trackRef}
-            role="region"
             aria-label="WailBrew screenshots"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: the scroll container must be focusable for arrow-key navigation
             tabIndex={0}
             onKeyDown={(event) => {
               if (event.key === "ArrowRight") scroll(1);
@@ -92,7 +90,7 @@ export const Screenshots = () => {
                 </figcaption>
               </figure>
             ))}
-          </div>
+          </section>
           <Button
             variant="outline"
             size="icon"

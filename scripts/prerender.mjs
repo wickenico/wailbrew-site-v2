@@ -7,8 +7,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = path.join(root, "dist");
 const ssrEntry = path.join(root, "dist-ssr", "entry-server.js");
 
-const { render, prerenderRoutes, getPageMeta, faqs, guides, guidePath, releases, SITE_URL, OG_IMAGE } =
-  await import(pathToFileURL(ssrEntry).href);
+const { render, prerenderRoutes, getPageMeta, faqs, guides, guidePath, releases, SITE_URL, OG_IMAGE } = await import(
+  pathToFileURL(ssrEntry).href
+);
 
 const template = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
 
@@ -106,13 +107,23 @@ const imageExists = (imageUrl) => {
   return exists;
 };
 
-const breadcrumbLabels = { "/about": "About", "/privacy": "Privacy Policy", "/changelog": "Changelog", "/guides": "Guides" };
+const breadcrumbLabels = {
+  "/about": "About",
+  "/privacy": "Privacy Policy",
+  "/changelog": "Changelog",
+  "/guides": "Guides",
+};
 
 const breadcrumbList = (route, title) => {
   const guide = guides.find(({ slug }) => guidePath(slug) === route);
   const crumbs = [
     ["Home", "/"],
-    ...(guide ? [["Guides", "/guides"], [guide.title, route]] : [[breadcrumbLabels[route] ?? title, route]]),
+    ...(guide
+      ? [
+          ["Guides", "/guides"],
+          [guide.title, route],
+        ]
+      : [[breadcrumbLabels[route] ?? title, route]]),
   ];
   return {
     "@type": "BreadcrumbList",
@@ -206,7 +217,7 @@ const routeSources = {
 };
 
 const today = new Date().toISOString().slice(0, 10);
-const latestDate = (dates) => dates.reduce((latest, date) => (date > latest ? date : latest), "");
+const latestDate = (dates) => dates.toSorted().at(-1);
 
 const fixedLastModified = {
   "/changelog": releases[0]?.date,
@@ -231,7 +242,9 @@ const lastModified = (route) => {
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${prerenderRoutes
-  .map((route) => `  <url>\n    <loc>${SITE_URL}${route}</loc>\n    <lastmod>${lastModified(route)}</lastmod>\n  </url>`)
+  .map(
+    (route) => `  <url>\n    <loc>${SITE_URL}${route}</loc>\n    <lastmod>${lastModified(route)}</lastmod>\n  </url>`,
+  )
   .join("\n")}
 </urlset>
 `;

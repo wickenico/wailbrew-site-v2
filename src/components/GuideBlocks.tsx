@@ -1,5 +1,5 @@
-import { useState, type ReactNode } from "react";
 import { Check, Copy } from "lucide-react";
+import { type ReactNode, useState } from "react";
 import logo from "@/assets/logo.webp";
 
 const CopyButton = ({ text }: { text: string }) => {

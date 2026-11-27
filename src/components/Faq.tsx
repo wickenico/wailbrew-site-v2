@@ -6,9 +6,7 @@ export const Faq = () => {
     <section id="faq" className="py-24 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Frequently asked questions
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently asked questions</h2>
           <p className="text-lg text-muted-foreground">
             Something else on your mind? Ask on{" "}
             <a

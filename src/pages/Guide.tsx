@@ -1,7 +1,7 @@
-import { PageLayout } from "@/components/PageLayout";
 import { DownloadCta } from "@/components/DownloadCta";
-import { guides, guidePath } from "@/content/guides";
+import { PageLayout } from "@/components/PageLayout";
 import { guideArticles } from "@/content/guide-articles";
+import { guidePath, guides } from "@/content/guides";
 
 const formatDate = (date: string) =>
   new Date(`${date}T00:00:00Z`).toLocaleDateString("en-US", {
@@ -17,18 +17,13 @@ const Guide = ({ slug }: { slug: string }) => {
 
   return (
     <PageLayout
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Guides", href: "/guides" },
-        { label: guide.title },
-      ]}
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Guides", href: "/guides" }, { label: guide.title }]}
     >
       <article>
         <header className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">{guide.title}</h1>
           <p className="text-sm text-muted-foreground">
-            Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time> · by Nico
-            Wickersheim
+            Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time> · by Nico Wickersheim
           </p>
         </header>
         <div className="article">{guideArticles[slug]}</div>

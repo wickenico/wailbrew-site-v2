@@ -16,8 +16,7 @@ export const faqs: Faq[] = [
   },
   {
     question: "Does it work on Apple Silicon (M1, M2, M3, M4)?",
-    answer:
-      "Yes. WailBrew is a universal app that runs natively on both Apple Silicon and Intel Macs.",
+    answer: "Yes. WailBrew is a universal app that runs natively on both Apple Silicon and Intel Macs.",
   },
   {
     question: "Which macOS versions are supported?",

@@ -19,17 +19,12 @@ updates:
       tailwindcss:
         patterns:
           - "tailwindcss"
-          - "tailwindcss-animate"
           - "tailwind-merge"
           - "@tailwindcss/*"
-          - "autoprefixer"
           - "postcss"
-      eslint:
+      biome:
         patterns:
-          - "eslint"
-          - "eslint-plugin-*"
-          - "@eslint/*"
-          - "typescript-eslint"
+          - "@biomejs/*"
       vercel:
         patterns:
           - "@vercel/*"
@@ -39,7 +34,6 @@ updates:
           - "@vitejs/*"
           - "typescript"
           - "@types/node"
-          - "globals"
       minor-and-patch:
         update-types:
           - "minor"
@@ -51,21 +45,15 @@ updates:
           - "@types/react"
           - "@types/react-dom"
           - "tailwindcss"
-          - "tailwindcss-animate"
           - "tailwind-merge"
           - "@tailwindcss/*"
-          - "autoprefixer"
           - "postcss"
-          - "eslint"
-          - "eslint-plugin-*"
-          - "@eslint/*"
-          - "typescript-eslint"
+          - "@biomejs/*"
           - "@vercel/*"
           - "vite"
           - "@vitejs/*"
           - "typescript"
           - "@types/node"
-          - "globals"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { Heart, Package, Shield, Zap } from "lucide-react";
-import { GithubIcon } from "@/components/icons/GithubIcon";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { useEffect } from "react";
 import logo from "@/assets/logo.webp";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 
 const About = () => {
   useEffect(() => {
@@ -16,10 +16,7 @@ const About = () => {
       <main className="pt-24 pb-16 px-4">
         <div className="container mx-auto max-w-3xl">
           <div className="mb-8">
-            <a
-              href="/"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <a href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               ← Back to Home
             </a>
           </div>
@@ -46,16 +43,16 @@ const About = () => {
               >
                 Homebrew
               </a>
-              , the popular package manager for macOS. It was created to make package management
-              accessible to users who prefer a visual interface over the command line — without
-              sacrificing any of Homebrew's power or flexibility.
+              , the popular package manager for macOS. It was created to make package management accessible to users who
+              prefer a visual interface over the command line — without sacrificing any of Homebrew's power or
+              flexibility.
             </p>
             <p className="text-foreground/85 text-sm leading-7">
-              Instead of memorizing commands like <code className="bg-card px-1.5 py-0.5 rounded text-xs">brew install</code>,{" "}
+              Instead of memorizing commands like{" "}
+              <code className="bg-card px-1.5 py-0.5 rounded text-xs">brew install</code>,{" "}
               <code className="bg-card px-1.5 py-0.5 rounded text-xs">brew upgrade</code>, or{" "}
-              <code className="bg-card px-1.5 py-0.5 rounded text-xs">brew search</code>, WailBrew
-              provides an intuitive, modern interface that lets you manage all your packages with a
-              few clicks.
+              <code className="bg-card px-1.5 py-0.5 rounded text-xs">brew search</code>, WailBrew provides an
+              intuitive, modern interface that lets you manage all your packages with a few clicks.
             </p>
           </section>
 
@@ -137,9 +134,9 @@ const About = () => {
                   Made with love in Freiburg im Breisgau, Germany
                 </p>
                 <p className="text-sm text-foreground/80 leading-relaxed mb-3">
-                  Software developer passionate about building tools that make developers' lives
-                  easier. WailBrew started as a personal project to avoid the terminal for routine
-                  package management and grew into a polished, open-source application.
+                  Software developer passionate about building tools that make developers' lives easier. WailBrew
+                  started as a personal project to avoid the terminal for routine package management and grew into a
+                  polished, open-source application.
                 </p>
                 <a
                   href="https://github.com/wickenico"
@@ -157,9 +154,7 @@ const About = () => {
           {/* Impressum */}
           <section className="mb-10">
             <h2 className="text-xl font-semibold mb-3">Impressum (Legal Notice)</h2>
-            <p className="text-xs text-muted-foreground mb-4">
-              Required by German law (§ 5 TMG / § 18 MStV)
-            </p>
+            <p className="text-xs text-muted-foreground mb-4">Required by German law (§ 5 TMG / § 18 MStV)</p>
             <div className="p-4 rounded-lg bg-card border border-border text-sm space-y-1 text-foreground/85">
               <p className="font-medium">Nico Wickersheim</p>
               <p>Freiburg im Breisgau</p>
@@ -176,8 +171,8 @@ const About = () => {
                 </a>
               </p>
               <p className="pt-1 text-xs text-muted-foreground">
-                This website is a non-commercial, open-source project website.
-                It does not constitute a commercial offering of services.
+                This website is a non-commercial, open-source project website. It does not constitute a commercial
+                offering of services.
               </p>
             </div>
           </section>
@@ -213,7 +208,6 @@ const About = () => {
               </a>
             </div>
           </section>
-
         </div>
       </main>
       <Footer />

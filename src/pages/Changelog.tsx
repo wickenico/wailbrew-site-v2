@@ -1,5 +1,5 @@
-import { PageLayout } from "@/components/PageLayout";
 import { DownloadCta } from "@/components/DownloadCta";
+import { PageLayout } from "@/components/PageLayout";
 import { releases } from "@/content/releases";
 
 const RELEASES_URL = "https://github.com/wickenico/WailBrew/releases";
@@ -17,8 +17,7 @@ const Changelog = () => (
     <h1 className="text-3xl md:text-4xl font-bold mb-4">WailBrew changelog</h1>
     <p className="text-lg text-muted-foreground mb-12">
       New features, improvements and fixes in every release of WailBrew. Already installed? Run{" "}
-      <code className="font-mono text-accent text-base">brew upgrade --cask wailbrew</code> to get
-      the latest version.
+      <code className="font-mono text-accent text-base">brew upgrade --cask wailbrew</code> to get the latest version.
     </p>
 
     {releases.length === 0 ? (
@@ -56,7 +55,11 @@ const Changelog = () => (
                 Downloads on GitHub
               </a>
             </div>
-            <div className="article article-compact" dangerouslySetInnerHTML={{ __html: release.html }} />
+            <div
+              className="article article-compact"
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: release notes are GitHub-sanitized HTML fetched at build time
+              dangerouslySetInnerHTML={{ __html: release.html }}
+            />
           </li>
         ))}
       </ol>

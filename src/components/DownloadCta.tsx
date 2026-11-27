@@ -5,8 +5,8 @@ export const DownloadCta = ({ title = "Prefer clicking over typing?" }: { title?
   <section className="mt-14 rounded-2xl border border-border bg-card p-6 md:p-8 text-center">
     <h2 className="text-2xl font-bold mb-3">{title}</h2>
     <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-      WailBrew is a free, open-source Homebrew GUI for macOS. It runs the same brew commands for
-      you, behind a fast native interface.
+      WailBrew is a free, open-source Homebrew GUI for macOS. It runs the same brew commands for you, behind a fast
+      native interface.
     </p>
     <Button
       size="lg"

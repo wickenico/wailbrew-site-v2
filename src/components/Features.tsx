@@ -1,14 +1,4 @@
-import {
-  RefreshCw,
-  BellDot,
-  Package,
-  Server,
-  Stethoscope,
-  FileDown,
-  Command,
-  Cpu,
-  Languages,
-} from "lucide-react";
+import { BellDot, Command, Cpu, FileDown, Languages, Package, RefreshCw, Server, Stethoscope } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const Features = () => {
@@ -16,8 +6,7 @@ export const Features = () => {
     {
       icon: RefreshCw,
       title: "Update everything in one click",
-      description:
-        "See what's outdated at a glance and upgrade a single package, a selection, or everything at once.",
+      description: "See what's outdated at a glance and upgrade a single package, a selection, or everything at once.",
     },
     {
       icon: BellDot,
@@ -34,8 +23,7 @@ export const Features = () => {
     {
       icon: Server,
       title: "Homebrew services",
-      description:
-        "Start, stop and restart background services like PostgreSQL, Redis or nginx from a single view.",
+      description: "Start, stop and restart background services like PostgreSQL, Redis or nginx from a single view.",
     },
     {
       icon: Stethoscope,
@@ -46,14 +34,12 @@ export const Features = () => {
     {
       icon: FileDown,
       title: "Taps & Brewfile export",
-      description:
-        "Tap and untap repositories, and export your setup as a Brewfile to recreate it on your next Mac.",
+      description: "Tap and untap repositories, and export your setup as a Brewfile to recreate it on your next Mac.",
     },
     {
       icon: Command,
       title: "Command palette",
-      description:
-        "Jump anywhere with keyboard shortcuts. Built for people who like the speed of the terminal.",
+      description: "Jump anywhere with keyboard shortcuts. Built for people who like the speed of the terminal.",
     },
     {
       icon: Cpu,
@@ -73,13 +59,10 @@ export const Features = () => {
     <section id="features" className="py-24 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Everything you need to manage Homebrew
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything you need to manage Homebrew</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            WailBrew runs the same brew commands you already know, behind a fast,
-            native interface. Nothing is hidden or reinvented, and session logs show
-            every command it executes.
+            WailBrew runs the same brew commands you already know, behind a fast, native interface. Nothing is hidden or
+            reinvented, and session logs show every command it executes.
           </p>
         </div>
 
@@ -96,9 +79,7 @@ export const Features = () => {
                 <CardTitle className="text-lg leading-snug">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base leading-relaxed">
-                  {feature.description}
-                </CardDescription>
+                <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
               </CardContent>
             </Card>
           ))}

@@ -1,4 +1,4 @@
-import { Check, X, Minus } from "lucide-react";
+import { Check, Minus, X } from "lucide-react";
 
 type Support = "yes" | "no" | "partial";
 
@@ -29,12 +29,10 @@ export const Comparison = () => {
     <section id="compare" className="py-24 px-4 bg-background">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            The modern Cakebrew alternative
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">The modern Cakebrew alternative</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Cakebrew made Homebrew approachable, but it's no longer maintained.
-            WailBrew picks up where it left off, with casks, services and regular releases.
+            Cakebrew made Homebrew approachable, but it's no longer maintained. WailBrew picks up where it left off,
+            with casks, services and regular releases.
           </p>
         </div>
 

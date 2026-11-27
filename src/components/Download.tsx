@@ -1,10 +1,10 @@
+import { Check, Copy, Download as DownloadIcon, Info, Terminal } from "lucide-react";
 import { useState } from "react";
-import { Download as DownloadIcon, Terminal, Info, Copy, Check } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export const Download = () => {
   const [copied, setCopied] = useState(false);
@@ -19,12 +19,9 @@ export const Download = () => {
     <section id="download" className="py-24 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Download WailBrew for macOS
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Download WailBrew for macOS</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Free, signed and notarized. Install it with Homebrew or grab the app
-            directly from GitHub.
+            Free, signed and notarized. Install it with Homebrew or grab the app directly from GitHub.
           </p>
         </div>
 
@@ -36,8 +33,8 @@ export const Download = () => {
               </div>
               <CardTitle className="text-xl">Direct Download</CardTitle>
               <CardDescription className="text-base">
-                Get the latest stable release with all features included.
-                Perfect for most users who want a simple installation.
+                Get the latest stable release with all features included. Perfect for most users who want a simple
+                installation.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -77,8 +74,7 @@ export const Download = () => {
               </div>
               <CardTitle className="text-xl">Install via Homebrew</CardTitle>
               <CardDescription className="text-base">
-                Use Homebrew to install WailBrew. Perfect for developers who
-                prefer command-line package management.
+                Use Homebrew to install WailBrew. Perfect for developers who prefer command-line package management.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -94,20 +90,16 @@ export const Download = () => {
                     size="sm"
                     onClick={copyToClipboard}
                     className={`h-7 px-2 hover:bg-white/10 transition-all duration-200 ${
-                      copied ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30' : 'text-foreground/80 hover:text-foreground'
+                      copied
+                        ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
+                        : "text-foreground/80 hover:text-foreground"
                     }`}
                   >
-                    {copied ? (
-                      <Check className="w-3.5 h-3.5" />
-                    ) : (
-                      <Copy className="w-3.5 h-3.5" />
-                    )}
+                    {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                   </Button>
                 </div>
                 <pre className="text-xs md:text-sm overflow-x-auto">
-                  <code className="text-accent font-mono">
-                    {brewCommand}
-                  </code>
+                  <code className="text-accent font-mono">{brewCommand}</code>
                 </pre>
               </div>
               <div className="space-y-1 text-sm">
@@ -134,8 +126,8 @@ export const Download = () => {
               </div>
               <CardTitle className="text-xl">Build from Source</CardTitle>
               <CardDescription className="text-base">
-                Clone the repository and build WailBrew yourself. Perfect for
-                developers who want to contribute or customize.
+                Clone the repository and build WailBrew yourself. Perfect for developers who want to contribute or
+                customize.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -168,8 +160,7 @@ export const Download = () => {
           <AlertDescription className="ml-2">
             <strong className="font-semibold">Before You Install</strong>
             <p className="mt-2">
-              WailBrew requires Homebrew to be installed on your system. If you
-              haven't installed Homebrew yet, visit{" "}
+              WailBrew requires Homebrew to be installed on your system. If you haven't installed Homebrew yet, visit{" "}
               <a
                 href="https://brew.sh/"
                 target="_blank"
@@ -180,16 +171,8 @@ export const Download = () => {
               </a>{" "}
               to get started. The installation is quick and straightforward.
             </p>
-            <Button
-              variant="link"
-              className="p-0 h-auto mt-2 text-primary"
-              asChild
-            >
-              <a
-                href="https://brew.sh/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <Button variant="link" className="p-0 h-auto mt-2 text-primary" asChild>
+              <a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">
                 Install Homebrew First →
               </a>
             </Button>

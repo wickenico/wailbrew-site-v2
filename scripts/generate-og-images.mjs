@@ -68,13 +68,17 @@ const pageHtml = (guide) => `<!doctype html>
 </html>`;
 
 const profileDir = fs.mkdtempSync(path.join(os.tmpdir(), "wailbrew-og-"));
-const chrome = spawn(chromePath, [
-  "--headless=new",
-  `--remote-debugging-port=${port}`,
-  `--user-data-dir=${profileDir}`,
-  "--allow-file-access-from-files",
-  "about:blank",
-], { stdio: "ignore" });
+const chrome = spawn(
+  chromePath,
+  [
+    "--headless=new",
+    `--remote-debugging-port=${port}`,
+    `--user-data-dir=${profileDir}`,
+    "--allow-file-access-from-files",
+    "about:blank",
+  ],
+  { stdio: "ignore" },
+);
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

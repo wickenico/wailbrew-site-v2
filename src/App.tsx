@@ -1,10 +1,10 @@
 import type { ComponentType } from "react";
-import Index from "./pages/Index";
+import { guidePath, guides } from "./content/guides";
 import About from "./pages/About";
-import Privacy from "./pages/Privacy";
 import Guides from "./pages/Guides";
+import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { guides, guidePath } from "./content/guides";
+import Privacy from "./pages/Privacy";
 
 const eagerPages: Record<string, ComponentType> = {
   "/": Index,
@@ -18,7 +18,8 @@ const lazyPages: Record<string, () => Promise<ComponentType>> = {
   ...Object.fromEntries(
     guides.map(({ slug }) => [
       guidePath(slug),
-      () => import("./pages/Guide").then(({ default: Guide }) => () => <Guide slug={slug} />),
+      () =>
+        import("./pages/Guide").then(({ default: Guide }) => () => <Guide slug={slug} />),
     ]),
   ),
 };

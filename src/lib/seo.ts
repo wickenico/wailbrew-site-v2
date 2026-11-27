@@ -1,4 +1,4 @@
-import { guides, guidePath } from "@/content/guides";
+import { guidePath, guides } from "@/content/guides";
 
 export const SITE_URL = "https://www.wailbrew.app";
 export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;

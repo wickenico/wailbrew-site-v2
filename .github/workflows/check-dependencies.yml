@@ -21,10 +21,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install dependencies with frozen lockfile
         run: pnpm install --frozen-lockfile
+
+      - name: Lint and format check
+        run: pnpm exec biome ci .
 
       - name: Verify lockfile is up to date
         run: |
@@ -36,4 +39,3 @@ jobs:
             exit 1
           fi
           echo "✅ Lockfile is up to date"
-

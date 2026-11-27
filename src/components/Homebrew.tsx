@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { scrollToSection } from "@/lib/scroll";
 import { guidePath } from "@/content/guides";
+import { scrollToSection } from "@/lib/scroll";
 
 export const Homebrew = () => {
   return (
@@ -9,18 +9,14 @@ export const Homebrew = () => {
       <div className="container mx-auto max-w-4xl">
         <Card className="border-border bg-card">
           <CardContent className="p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-              New to Homebrew?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">New to Homebrew?</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Homebrew is the most popular package manager for macOS. It installs
-              thousands of developer tools, libraries and Mac apps that would
-              otherwise need manual downloads or compiling.
+              Homebrew is the most popular package manager for macOS. It installs thousands of developer tools,
+              libraries and Mac apps that would otherwise need manual downloads or compiling.
             </p>
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              The catch: Homebrew lives in the terminal. WailBrew gives it a friendly
-              face, so you can browse, install and update everything with a few clicks.
-              Install Homebrew once from{" "}
+              The catch: Homebrew lives in the terminal. WailBrew gives it a friendly face, so you can browse, install
+              and update everything with a few clicks. Install Homebrew once from{" "}
               <a
                 href="https://brew.sh/"
                 target="_blank"

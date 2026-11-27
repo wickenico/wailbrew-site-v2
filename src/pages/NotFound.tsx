@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
@@ -15,9 +15,7 @@ const NotFound = () => {
         <div className="text-center">
           <p className="mb-2 text-sm font-medium text-primary">404</p>
           <h1 className="mb-4 text-4xl font-bold">Page not found</h1>
-          <p className="mb-8 text-lg text-muted-foreground">
-            This page doesn't exist, but WailBrew does.
-          </p>
+          <p className="mb-8 text-lg text-muted-foreground">This page doesn't exist, but WailBrew does.</p>
           <Button className="bg-gradient-primary hover:opacity-90 text-white border-0" asChild>
             <a href="/">Back to WailBrew</a>
           </Button>
