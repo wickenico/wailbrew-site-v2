@@ -68,7 +68,7 @@
     "@tailwindcss/postcss": "4.3.5",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^26.6.7",
-    "@types/react": "^19.3.2",
+    "@types/react": "^19.3.3",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react-swc": "^4.3.3",
     "autoprefixer": "^10.7.0",
