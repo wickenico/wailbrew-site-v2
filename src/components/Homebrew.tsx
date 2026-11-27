@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { scrollToSection } from "@/lib/scroll";
+import { guidePath } from "@/content/guides";
 
 export const Homebrew = () => {
   return (
@@ -16,7 +17,7 @@ export const Homebrew = () => {
               thousands of developer tools, libraries and Mac apps that would
               otherwise need manual downloads or compiling.
             </p>
-            <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base text-muted-foreground mb-6 leading-relaxed">
               The catch: Homebrew lives in the terminal. WailBrew gives it a friendly
               face, so you can browse, install and update everything with a few clicks.
               Install Homebrew once from{" "}
@@ -29,6 +30,25 @@ export const Homebrew = () => {
                 brew.sh
               </a>
               , then let WailBrew take it from there.
+            </p>
+            <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+              Want to understand what's going on under the hood? Our{" "}
+              <a href="/guides" className="text-primary hover:underline font-medium">
+                Homebrew guides
+              </a>{" "}
+              explain{" "}
+              <a href={guidePath("homebrew-formula-vs-cask")} className="text-primary hover:underline">
+                formulae vs. casks
+              </a>
+              ,{" "}
+              <a href={guidePath("update-homebrew-packages")} className="text-primary hover:underline">
+                updating packages
+              </a>{" "}
+              and{" "}
+              <a href={guidePath("homebrew-cleanup")} className="text-primary hover:underline">
+                freeing up disk space
+              </a>
+              .
             </p>
             <div className="text-center">
               <Button

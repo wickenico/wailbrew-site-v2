@@ -33,12 +33,18 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://github.com/wickenico/WailBrew/releases"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/guides"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Releases
+                  Homebrew guides
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/changelog"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Changelog
                 </a>
               </li>
               <li>

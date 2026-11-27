@@ -1,20 +1,23 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { Analytics } from "@vercel/analytics/react";
-import App from "./App.tsx";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import App, { loadPage } from "./App.tsx";
 import "./index.css";
-import {SpeedInsights} from "@vercel/speed-insights/react";
 
 const root = document.getElementById("root")!;
-const app = (
-  <>
-    <App path={window.location.pathname} />
-    <Analytics />
-      <SpeedInsights />
-  </>
-);
 
-if (root.hasChildNodes()) {
-  hydrateRoot(root, app);
-} else {
-  createRoot(root).render(app);
-}
+loadPage(window.location.pathname).then((page) => {
+  const app = (
+    <>
+      <App page={page} />
+      <Analytics />
+      <SpeedInsights />
+    </>
+  );
+
+  if (root.hasChildNodes()) {
+    hydrateRoot(root, app);
+  } else {
+    createRoot(root).render(app);
+  }
+});

@@ -7,9 +7,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = path.join(root, "dist");
 const ssrEntry = path.join(root, "dist-ssr", "entry-server.js");
 
-const { render, prerenderRoutes, getPageMeta, faqs, SITE_URL, OG_IMAGE } = await import(
-  pathToFileURL(ssrEntry).href
-);
+const { render, prerenderRoutes, getPageMeta, faqs, guides, guidePath, releases, SITE_URL, OG_IMAGE } =
+  await import(pathToFileURL(ssrEntry).href);
 
 const template = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
 
@@ -22,19 +21,7 @@ const setMeta = (html, attr, key, value) => {
   return html.replace(pattern, `$1${escapeAttr(value)}$2`);
 };
 
-const fetchLatestVersion = async () => {
-  try {
-    const response = await fetch("https://api.github.com/repos/wickenico/WailBrew/releases/latest", {
-      signal: AbortSignal.timeout(5000),
-    });
-    if (!response.ok) return null;
-    return (await response.json()).tag_name?.replace(/^v/, "") ?? null;
-  } catch {
-    return null;
-  }
-};
-
-const latestVersion = await fetchLatestVersion();
+const latestVersion = releases[0]?.version ?? null;
 
 const DEMO_VIDEO_UPLOAD_DATE = "2026-09-05";
 
@@ -112,8 +99,49 @@ const homeStructuredData = (description, body) => {
   };
 };
 
-const renderPage = (route, { notFound = false } = {}) => {
-  const { title, description } = getPageMeta(notFound ? "/404" : route);
+const breadcrumbLabels = { "/about": "About", "/privacy": "Privacy Policy", "/changelog": "Changelog", "/guides": "Guides" };
+
+const breadcrumbList = (route, title) => {
+  const guide = guides.find(({ slug }) => guidePath(slug) === route);
+  const crumbs = [
+    ["Home", "/"],
+    ...(guide ? [["Guides", "/guides"], [guide.title, route]] : [[breadcrumbLabels[route] ?? title, route]]),
+  ];
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map(([name, href], index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name,
+      item: `${SITE_URL}${href}`,
+    })),
+  };
+};
+
+const guideArticle = (route) => {
+  const guide = guides.find(({ slug }) => guidePath(slug) === route);
+  if (!guide) return null;
+  return {
+    "@type": "TechArticle",
+    headline: guide.title,
+    description: guide.description,
+    url: `${SITE_URL}${route}`,
+    mainEntityOfPage: `${SITE_URL}${route}`,
+    datePublished: guide.published,
+    dateModified: guide.updated,
+    image: OG_IMAGE,
+    inLanguage: "en",
+    author: { "@type": "Person", name: "Nico Wickersheim", url: "https://github.com/wickenico" },
+    publisher: { "@type": "Person", name: "Nico Wickersheim", url: "https://github.com/wickenico" },
+    about: { "@type": "SoftwareApplication", name: "Homebrew", url: "https://brew.sh" },
+  };
+};
+
+const jsonLdScript = (data) =>
+  `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>`;
+
+const renderPage = async (route, { notFound = false } = {}) => {
+  const { title, description, type = "website" } = getPageMeta(notFound ? "/404" : route);
   const url = `${SITE_URL}${route}`;
 
   let html = template
@@ -124,18 +152,21 @@ const renderPage = (route, { notFound = false } = {}) => {
   html = setMeta(html, "property", "og:title", title);
   html = setMeta(html, "property", "og:description", description);
   html = setMeta(html, "property", "og:url", url);
+  html = setMeta(html, "property", "og:type", type);
   html = setMeta(html, "name", "twitter:title", title);
   html = setMeta(html, "name", "twitter:description", description);
 
-  const body = render(notFound ? "/404" : route);
+  const body = await render(notFound ? "/404" : route);
 
   let headExtras = "";
   if (notFound) {
     headExtras = '<meta name="robots" content="noindex" />';
     html = html.replace(/\s*<link rel="canonical" href="[^"]*" \/>/, "");
   } else if (route === "/") {
-    const json = JSON.stringify(homeStructuredData(description, body)).replace(/</g, "\\u003c");
-    headExtras = `<script type="application/ld+json">${json}</script>`;
+    headExtras = jsonLdScript(homeStructuredData(description, body));
+  } else {
+    const graph = [guideArticle(route), breadcrumbList(route, title)].filter(Boolean);
+    headExtras = jsonLdScript({ "@context": "https://schema.org", "@graph": graph });
   }
 
   return html
@@ -146,22 +177,32 @@ const renderPage = (route, { notFound = false } = {}) => {
 const outFile = (route) => (route === "/" ? "index.html" : `${route.slice(1)}.html`);
 
 for (const route of prerenderRoutes) {
-  fs.writeFileSync(path.join(distDir, outFile(route)), renderPage(route));
+  const file = path.join(distDir, outFile(route));
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, await renderPage(route));
   console.log(`prerendered ${route} -> dist/${outFile(route)}`);
 }
 
-fs.writeFileSync(path.join(distDir, "404.html"), renderPage("/404", { notFound: true }));
+fs.writeFileSync(path.join(distDir, "404.html"), await renderPage("/404", { notFound: true }));
 console.log("prerendered 404 -> dist/404.html");
 
 const routeSources = {
-  "/": ["src/pages/Index.tsx", "src/components", "src/content"],
+  "/": ["src/pages/Index.tsx", "src/components", "src/content/faq.ts"],
   "/about": ["src/pages/About.tsx"],
   "/privacy": ["src/pages/Privacy.tsx"],
 };
 
 const today = new Date().toISOString().slice(0, 10);
+const latestDate = (dates) => dates.reduce((latest, date) => (date > latest ? date : latest), "");
+
+const fixedLastModified = {
+  "/changelog": releases[0]?.date,
+  "/guides": latestDate(guides.map(({ updated }) => updated)),
+  ...Object.fromEntries(guides.map(({ slug, updated }) => [guidePath(slug), updated])),
+};
 
 const lastModified = (route) => {
+  if (fixedLastModified[route]) return fixedLastModified[route];
   try {
     const date = execFileSync("git", ["log", "-1", "--format=%cs", "--", ...(routeSources[route] ?? ["src"])], {
       cwd: root,

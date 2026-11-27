@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Download, Copy, Check, Star } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Button } from "@/components/ui/button";
@@ -26,7 +26,17 @@ export const Hero = () => {
   const [copied, setCopied] = useState(false);
   const [stars, setStars] = useState<string | null>(null);
   const [version, setVersion] = useState<string | null>(null);
+  const [showVideoControls, setShowVideoControls] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const installCommand = "brew install --cask wailbrew";
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShowVideoControls(true);
+      return;
+    }
+    videoRef.current?.play().catch(() => setShowVideoControls(true));
+  }, []);
 
   useEffect(() => {
     const fetchGitHubStats = async () => {
@@ -148,7 +158,8 @@ export const Hero = () => {
 
         <div className="mb-14 animate-fade-in">
           <video
-            autoPlay
+            ref={videoRef}
+            controls={showVideoControls}
             muted
             loop
             playsInline

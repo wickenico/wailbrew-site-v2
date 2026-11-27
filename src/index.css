@@ -59,6 +59,67 @@ All colors MUST be HSL.
   section[id] {
     scroll-margin-top: 5rem;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in {
+      animation: none;
+    }
+  }
+}
+
+@layer components {
+  .article {
+    @apply text-foreground/85 leading-7;
+  }
+  .article h2 {
+    @apply text-2xl font-semibold text-foreground mt-12 mb-4;
+  }
+  .article h3 {
+    @apply text-lg font-semibold text-foreground mt-8 mb-3;
+  }
+  .article h4 {
+    @apply font-semibold text-foreground mt-6 mb-2;
+  }
+  .article p {
+    @apply mb-4;
+  }
+  .article ul {
+    @apply list-disc pl-6 mb-4 space-y-1.5;
+  }
+  .article ol {
+    @apply list-decimal pl-6 mb-4 space-y-1.5;
+  }
+  .article a {
+    @apply text-primary underline-offset-2 hover:underline;
+  }
+  .article strong {
+    @apply font-semibold text-foreground;
+  }
+  .article code {
+    @apply font-mono text-[0.875em] bg-card px-1.5 py-0.5 rounded;
+  }
+  .article pre {
+    @apply bg-terminal-bg border border-border/50 rounded-lg px-4 py-3 mb-5 overflow-x-auto text-sm leading-6;
+  }
+  .article pre code {
+    @apply bg-transparent p-0 text-accent text-sm;
+  }
+  .article table {
+    @apply w-full text-sm border-collapse;
+  }
+  .article th,
+  .article td {
+    @apply border-b border-border px-3 py-2 text-left align-top;
+  }
+  .article th {
+    @apply font-semibold text-foreground;
+  }
+  .article-compact h3 {
+    @apply text-base mt-6 mb-2;
+  }
+  .article-compact > :first-child {
+    @apply mt-0;
+  }
 }
 
 /* Tailwind v4 CSS-based configuration */

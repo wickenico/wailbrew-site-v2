@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll";
 import logo from "@/assets/logo.webp";
 
-const navItems = [
-  { id: "features", label: "Features" },
-  { id: "compare", label: "vs. Cakebrew" },
-  { id: "faq", label: "FAQ" },
-  { id: "download", label: "Download" },
+const navItems: { label: string; href: string; id?: string }[] = [
+  { id: "features", label: "Features", href: "/#features" },
+  { id: "compare", label: "vs. Cakebrew", href: "/#compare" },
+  { label: "Guides", href: "/guides" },
+  { id: "faq", label: "FAQ", href: "/#faq" },
+  { id: "download", label: "Download", href: "/#download" },
 ];
 
 export const Header = () => {
@@ -20,8 +21,8 @@ export const Header = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
-    if (!document.getElementById(id)) return;
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, id?: string) => {
+    if (!id || !document.getElementById(id)) return;
     event.preventDefault();
     scrollToSection(id);
     setIsMenuOpen(false);
@@ -38,8 +39,8 @@ export const Header = () => {
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <a
-              key={item.id}
-              href={`/#${item.id}`}
+              key={item.label}
+              href={item.href}
               onClick={(event) => handleNavClick(event, item.id)}
               className="text-sm text-foreground/80 hover:text-foreground transition-colors"
             >
@@ -103,8 +104,8 @@ export const Header = () => {
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navItems.map((item) => (
               <a
-                key={item.id}
-                href={`/#${item.id}`}
+                key={item.label}
+                href={item.href}
                 onClick={(event) => handleNavClick(event, item.id)}
                 className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
               >
