@@ -41,6 +41,8 @@ jobs:
 
       - name: Typecheck
         run: pnpm typecheck
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: pnpm build
