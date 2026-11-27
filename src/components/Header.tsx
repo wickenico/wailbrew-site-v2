@@ -47,12 +47,7 @@ export const Header = () => {
               {item.label}
             </a>
           ))}
-          <a
-            href="https://github.com/sponsors/wickenico"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <a href="/sponsor" className="text-sm text-foreground/80 hover:text-foreground transition-colors">
             Sponsor
           </a>
           <Button variant="outline" size="sm" asChild>
@@ -99,9 +94,7 @@ export const Header = () => {
               </a>
             ))}
             <a
-              href="https://github.com/sponsors/wickenico"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/sponsor"
               className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

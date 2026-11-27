@@ -11,7 +11,10 @@ if (process.argv.includes("--if-missing") && fs.existsSync(outFile)) process.exi
 const cleanBody = (html) =>
   html
     .replace(/<h1[^>]*>[\s\S]*?<\/h1>/g, "")
-    .replace(/<h2[^>]*>\s*Dependencies\s*<\/h2>[\s\S]*?(?=<h[12][\s>]|$)/g, "")
+    .replace(
+      /<h2[^>]*>\s*(?:Dependencies|Support WailBrew)\s*<\/h2>[\s\S]*?(?=<h[12][\s>]|<p><strong>Full Changelog|$)/g,
+      "",
+    )
     .replace(/<p><strong>Full Changelog<\/strong>[\s\S]*?<\/p>/g, "")
     .replace(/\s(?:class|dir|data-[\w-]+|aria-[\w-]+)="[^"]*"/g, "")
     .replace(/<(\/?)tt>/g, "<$1code>")

@@ -112,6 +112,7 @@ const breadcrumbLabels = {
   "/privacy": "Privacy Policy",
   "/changelog": "Changelog",
   "/guides": "Guides",
+  "/sponsor": "Support WailBrew",
 };
 
 const breadcrumbList = (route, title) => {
@@ -214,6 +215,7 @@ const routeSources = {
   "/": ["src/pages/Index.tsx", "src/components", "src/content/faq.ts"],
   "/about": ["src/pages/About.tsx"],
   "/privacy": ["src/pages/Privacy.tsx"],
+  "/sponsor": ["src/pages/Sponsor.tsx"],
 };
 
 const today = new Date().toISOString().slice(0, 10);

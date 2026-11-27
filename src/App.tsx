@@ -5,12 +5,14 @@ import Guides from "./pages/Guides";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
+import Sponsor from "./pages/Sponsor";
 
 const eagerPages: Record<string, ComponentType> = {
   "/": Index,
   "/about": About,
   "/privacy": Privacy,
   "/guides": Guides,
+  "/sponsor": Sponsor,
 };
 
 const lazyPages: Record<string, () => Promise<ComponentType>> = {
