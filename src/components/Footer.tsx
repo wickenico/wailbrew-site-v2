@@ -14,8 +14,8 @@ export const Footer = () => {
               <span className="text-xl font-bold">WailBrew</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-              A minimalistic and beautiful GUI for Homebrew package management
-              on macOS. Making package management effortless and enjoyable.
+              The free, open-source Homebrew GUI for macOS. Install, update and
+              clean up formulae, casks and services without the terminal.
             </p>
           </div>
 

@@ -8,7 +8,7 @@ const Privacy = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const lastUpdated = "March 2025";
+  const lastUpdated = "November 2026";
 
   return (
     <div className="min-h-screen bg-background">
@@ -110,61 +110,9 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">6. Advertising – Google AdSense</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">6. GitHub API</h2>
               <p>
-                This Site uses <strong>Google AdSense</strong>, an advertising service provided by
-                Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Google AdSense
-                uses cookies and similar tracking technologies to serve personalized advertisements
-                based on your browsing behavior.
-              </p>
-              <p className="mt-2">
-                Google AdSense may collect and process the following data:
-              </p>
-              <ul className="list-disc list-inside space-y-2 pl-2 mt-2">
-                <li>Cookie identifiers and device identifiers</li>
-                <li>IP address</li>
-                <li>Browsing history and interests (for ad personalization)</li>
-                <li>Interaction with advertisements</li>
-              </ul>
-              <p className="mt-3">
-                The legal basis for this processing is your consent (Art. 6(1)(a) GDPR) or, where
-                applicable, our legitimate interest. You can opt out of personalized advertising at{" "}
-                <a
-                  href="https://www.google.com/settings/ads"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  google.com/settings/ads
-                </a>{" "}
-                or via the{" "}
-                <a
-                  href="https://optout.aboutads.info/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  Digital Advertising Alliance opt-out
-                </a>
-                .
-              </p>
-              <p className="mt-2">
-                For more information, see Google's Privacy Policy:{" "}
-                <a
-                  href="https://policies.google.com/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  policies.google.com/privacy
-                </a>
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">7. GitHub API</h2>
-              <p>
-                Our Site fetches publicly available data (stars, forks, latest release version) from
+                Our Site fetches publicly available data (stars, latest release version) from
                 the <strong>GitHub API</strong> (api.github.com) to display live project statistics.
                 This request is made from your browser and is subject to GitHub's Privacy Policy:{" "}
                 <a
@@ -180,17 +128,15 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">8. Cookies</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">7. Cookies</h2>
               <p>
-                This Site itself does not set any first-party cookies. However, third-party services
-                (Google AdSense) may set cookies in your browser. You can manage or disable cookies
-                in your browser settings at any time. Please note that disabling cookies may affect
-                the functionality of certain features.
+                This Site does not set any cookies and does not use third-party advertising or
+                tracking cookies.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">9. Your Rights (GDPR)</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">8. Your Rights (GDPR)</h2>
               <p className="mb-3">Under the GDPR, you have the following rights:</p>
               <ul className="list-disc list-inside space-y-2 pl-2">
                 <li><strong>Right of access</strong> (Art. 15 GDPR) – Request information about your personal data</li>
@@ -226,17 +172,17 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">10. Data Retention</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">9. Data Retention</h2>
               <p>
                 We do not directly store personal data on our own servers. Data processed by
-                third-party services (Vercel, Google) is retained according to their respective
+                third-party services (Vercel, GitHub) is retained according to their respective
                 policies. Log data held by Vercel for infrastructure purposes is typically retained
                 for a short period (up to 30 days).
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">11. Changes to This Policy</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">10. Changes to This Policy</h2>
               <p>
                 We may update this Privacy Policy from time to time. The "last updated" date at the
                 top of this page indicates when changes were made. We encourage you to review this

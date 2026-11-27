@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { scrollToSection } from "@/lib/scroll";
 
 export const Homebrew = () => {
   return (
@@ -8,40 +9,34 @@ export const Homebrew = () => {
         <Card className="border-border bg-card">
           <CardContent className="p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-              But.. What's Homebrew?
+              New to Homebrew?
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Homebrew is the missing package manager for macOS (and Linux).
-            </p>
-            <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              With Homebrew you can install thousands of command-line
-              applications and libraries that would require manual compilation,
-              which is not always very straightforward.
+              Homebrew is the most popular package manager for macOS. It installs
+              thousands of developer tools, libraries and Mac apps that would
+              otherwise need manual downloads or compiling.
             </p>
             <p className="text-base text-muted-foreground mb-8 leading-relaxed">
-              WailBrew brings this to a whole new level of simplicity. Install
-              command-line tools from a beautiful app with just a few clicks.
-              Could it be easier?
+              The catch: Homebrew lives in the terminal. WailBrew gives it a friendly
+              face, so you can browse, install and update everything with a few clicks.
+              Install Homebrew once from{" "}
+              <a
+                href="https://brew.sh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium"
+              >
+                brew.sh
+              </a>
+              , then let WailBrew take it from there.
             </p>
             <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Ready to get started?
-              </p>
               <Button
                 size="lg"
                 className="bg-gradient-primary hover:opacity-90 transition-opacity text-white border-0"
-                onClick={() => {
-                  const element = document.getElementById("download");
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition =
-                      elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                  }
-                }}
+                onClick={() => scrollToSection("download")}
               >
-                Get WailBrew
+                Get WailBrew – it's free
               </Button>
             </div>
           </CardContent>

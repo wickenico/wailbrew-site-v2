@@ -34,7 +34,7 @@ export const ScrollToTop = () => {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="fixed bottom-8 right-8 z-50 rounded-full w-12 h-12 bg-gradient-primary hover:opacity-90 transition-all shadow-lg hover:shadow-xl text-white border-0"
+          className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 rounded-full w-11 h-11 sm:w-12 sm:h-12 bg-gradient-primary hover:opacity-90 transition-all shadow-lg hover:shadow-xl text-white border-0"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-5 h-5" />

@@ -20,11 +20,11 @@ export const Download = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Download WailBrew
+            Download WailBrew for macOS
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose your preferred installation method and start managing your
-            Homebrew packages with style.
+            Free, signed and notarized. Install it with Homebrew or grab the app
+            directly from GitHub.
           </p>
         </div>
 
@@ -47,12 +47,12 @@ export const Download = () => {
                   <span className="font-medium">Latest</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Size</span>
-                  <span className="font-medium">~15 MB</span>
+                  <span className="text-muted-foreground">Chip</span>
+                  <span className="font-medium">Apple Silicon &amp; Intel</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">macOS</span>
-                  <span className="font-medium">11.0+</span>
+                  <span className="font-medium">12.0+</span>
                 </div>
               </div>
               <Button

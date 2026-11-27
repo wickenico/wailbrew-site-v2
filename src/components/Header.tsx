@@ -1,21 +1,25 @@
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { scrollToSection } from "@/lib/scroll";
 import logo from "@/assets/logo.webp";
+
+const navItems = [
+  { id: "features", label: "Features" },
+  { id: "compare", label: "vs. Cakebrew" },
+  { id: "faq", label: "FAQ" },
+  { id: "download", label: "Download" },
+];
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-      setIsMenuOpen(false);
-    }
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (!document.getElementById(id)) return;
+    event.preventDefault();
+    scrollToSection(id);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -27,18 +31,16 @@ export const Header = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          <button
-            onClick={() => scrollToSection("features")}
-            className="text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
-          >
-            Features
-          </button>
-          <button
-            onClick={() => scrollToSection("download")}
-            className="text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
-          >
-            Download
-          </button>
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`/#${item.id}`}
+              onClick={(event) => handleNavClick(event, item.id)}
+              className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
           <a
             href="https://github.com/sponsors/wickenico"
             target="_blank"
@@ -64,6 +66,7 @@ export const Header = () => {
           className="md:hidden p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
         >
           <svg
             className="w-6 h-6"
@@ -93,18 +96,16 @@ export const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden border-t border-border bg-header-bg/95 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            <button
-              onClick={() => scrollToSection("features")}
-              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
-            >
-              Features
-            </button>
-            <button
-              onClick={() => scrollToSection("download")}
-              className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
-            >
-              Download
-            </button>
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`/#${item.id}`}
+                onClick={(event) => handleNavClick(event, item.id)}
+                className="text-left text-sm text-foreground/80 hover:text-foreground transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
             <a
               href="https://github.com/sponsors/wickenico"
               target="_blank"
