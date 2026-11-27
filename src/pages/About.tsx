@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Heart, Package, Shield, Zap } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Header } from "@/components/Header";
@@ -17,12 +16,12 @@ const About = () => {
       <main className="pt-24 pb-16 px-4">
         <div className="container mx-auto max-w-3xl">
           <div className="mb-8">
-            <Link
-              to="/"
+            <a
+              href="/"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               ← Back to Home
-            </Link>
+            </a>
           </div>
 
           {/* Hero */}

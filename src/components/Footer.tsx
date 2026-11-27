@@ -1,6 +1,5 @@
 import { Heart } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
-import { Link } from "react-router-dom";
 import logo from "@/assets/logo.webp";
 
 export const Footer = () => {
@@ -103,18 +102,18 @@ export const Footer = () => {
               License.
             </p>
             <div className="flex items-center gap-4">
-              <Link
-                to="/about"
+              <a
+                href="/about"
                 className="hover:text-foreground transition-colors"
               >
                 About
-              </Link>
-              <Link
-                to="/privacy"
+              </a>
+              <a
+                href="/privacy"
                 className="hover:text-foreground transition-colors"
               >
                 Privacy Policy
-              </Link>
+              </a>
               <p className="flex items-center gap-1">
                 Made with <Heart className="w-4 h-4 text-red-500 fill-current" />{" "}
                 in Freiburg

@@ -1,10 +1,6 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { useRef } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import screenshotMain from "@/assets/Screenshot.webp";
 import screenshotLight from "@/assets/screenshot-light.webp";
 import screenshotCasks from "@/assets/screenshot-casks.webp";
@@ -40,6 +36,22 @@ const screenshots = [
 ];
 
 export const Screenshots = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+    const atStart = track.scrollLeft <= 0;
+    if (direction === 1 && atEnd) {
+      track.scrollTo({ left: 0, behavior: "smooth" });
+    } else if (direction === -1 && atStart) {
+      track.scrollTo({ left: track.scrollWidth, behavior: "smooth" });
+    } else {
+      track.scrollBy({ left: direction * track.clientWidth, behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="screenshots" className="py-24 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -52,30 +64,54 @@ export const Screenshots = () => {
           </p>
         </div>
 
-        <Carousel opts={{ loop: true }} className="mx-auto max-w-4xl">
-          <CarouselContent>
+        <div className="relative mx-auto max-w-4xl">
+          <div
+            ref={trackRef}
+            role="region"
+            aria-label="WailBrew screenshots"
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === "ArrowRight") scroll(1);
+              if (event.key === "ArrowLeft") scroll(-1);
+            }}
+            className="flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-none"
+          >
             {screenshots.map((screenshot) => (
-              <CarouselItem key={screenshot.alt}>
-                <figure>
-                  <img
-                    src={screenshot.src}
-                    alt={screenshot.alt}
-                    loading="lazy"
-                    decoding="async"
-                    width={3200}
-                    height={2000}
-                    className="w-full h-auto rounded-xl border border-border shadow-2xl"
-                  />
-                  <figcaption className="mt-5 text-center text-base text-muted-foreground">
-                    {screenshot.caption}
-                  </figcaption>
-                </figure>
-              </CarouselItem>
+              <figure key={screenshot.alt} className="w-full shrink-0 snap-center">
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={3200}
+                  height={2000}
+                  className="w-full h-auto rounded-xl border border-border"
+                />
+                <figcaption className="mt-5 text-center text-base text-muted-foreground">
+                  {screenshot.caption}
+                </figcaption>
+              </figure>
             ))}
-          </CarouselContent>
-          <CarouselPrevious className="top-[40%] left-3 lg:-left-12" />
-          <CarouselNext className="top-[40%] right-3 lg:-right-12" />
-        </Carousel>
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label="Previous screenshot"
+            onClick={() => scroll(-1)}
+            className="absolute top-[40%] -translate-y-1/2 left-3 lg:-left-12 h-8 w-8 rounded-full"
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label="Next screenshot"
+            onClick={() => scroll(1)}
+            className="absolute top-[40%] -translate-y-1/2 right-3 lg:-right-12 h-8 w-8 rounded-full"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </section>
   );

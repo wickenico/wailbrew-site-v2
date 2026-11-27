@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -16,12 +15,12 @@ const Privacy = () => {
       <main className="pt-24 pb-16 px-4">
         <div className="container mx-auto max-w-3xl">
           <div className="mb-8">
-            <Link
-              to="/"
+            <a
+              href="/"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               ← Back to Home
-            </Link>
+            </a>
           </div>
 
           <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>

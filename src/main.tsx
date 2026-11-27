@@ -7,7 +7,7 @@ import {SpeedInsights} from "@vercel/speed-insights/react";
 const root = document.getElementById("root")!;
 const app = (
   <>
-    <App />
+    <App path={window.location.pathname} />
     <Analytics />
       <SpeedInsights />
   </>

@@ -12,8 +12,6 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      // Prevent Next.js specific modules from being resolved
-      "next/navigation": path.resolve(__dirname, "./src/lib/next-navigation-stub.ts"),
     },
   },
   build: {

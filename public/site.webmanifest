@@ -1,0 +1,13 @@
+{
+  "name": "WailBrew – Homebrew GUI for macOS",
+  "short_name": "WailBrew",
+  "description": "The free, open-source Homebrew GUI for macOS.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
