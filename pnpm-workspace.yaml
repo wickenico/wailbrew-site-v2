@@ -1,12 +1,4 @@
 packages: []
 
-allowBuilds:
-  "@swc/core": true
-
 ignoredBuiltDependencies:
   - "@vercel/speed-insights"
-
-onlyBuiltDependencies:
-  - "@parcel/watcher"
-  - "@swc/core"
-  - esbuild
