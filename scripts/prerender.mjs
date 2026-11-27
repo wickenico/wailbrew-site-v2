@@ -99,6 +99,13 @@ const homeStructuredData = (description, body) => {
   };
 };
 
+const imageExists = (imageUrl) => {
+  if (!imageUrl) return false;
+  const exists = fs.existsSync(path.join(distDir, imageUrl.slice(SITE_URL.length)));
+  if (!exists) console.warn(`missing ${imageUrl.slice(SITE_URL.length)}, using default og:image (run pnpm og:guides)`);
+  return exists;
+};
+
 const breadcrumbLabels = { "/about": "About", "/privacy": "Privacy Policy", "/changelog": "Changelog", "/guides": "Guides" };
 
 const breadcrumbList = (route, title) => {
@@ -129,7 +136,7 @@ const guideArticle = (route) => {
     mainEntityOfPage: `${SITE_URL}${route}`,
     datePublished: guide.published,
     dateModified: guide.updated,
-    image: OG_IMAGE,
+    image: imageExists(getPageMeta(route).image) ? getPageMeta(route).image : OG_IMAGE,
     inLanguage: "en",
     author: { "@type": "Person", name: "Nico Wickersheim", url: "https://github.com/wickenico" },
     publisher: { "@type": "Person", name: "Nico Wickersheim", url: "https://github.com/wickenico" },
@@ -141,7 +148,8 @@ const jsonLdScript = (data) =>
   `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>`;
 
 const renderPage = async (route, { notFound = false } = {}) => {
-  const { title, description, type = "website" } = getPageMeta(notFound ? "/404" : route);
+  const { title, description, type = "website", imageAlt, ...meta } = getPageMeta(notFound ? "/404" : route);
+  const image = meta.image && imageExists(meta.image) ? meta.image : undefined;
   const url = `${SITE_URL}${route}`;
 
   let html = template
@@ -153,6 +161,11 @@ const renderPage = async (route, { notFound = false } = {}) => {
   html = setMeta(html, "property", "og:description", description);
   html = setMeta(html, "property", "og:url", url);
   html = setMeta(html, "property", "og:type", type);
+  if (image) {
+    html = setMeta(html, "property", "og:image", image);
+    html = setMeta(html, "property", "og:image:alt", imageAlt ?? title);
+    html = setMeta(html, "name", "twitter:image", image);
+  }
   html = setMeta(html, "name", "twitter:title", title);
   html = setMeta(html, "name", "twitter:description", description);
 

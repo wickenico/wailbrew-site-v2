@@ -402,7 +402,7 @@ export const guideArticles: Record<string, ReactNode> = {
       </p>
 
       <h2>What's inside</h2>
-      <Cmd>{'tap "owner/tools"\nbrew "git"\nbrew "node"\ncask "firefox"\ncask "visual-studio-code"'}</Cmd>
+      <Cmd copyable={false}>{'tap "owner/tools"\nbrew "git"\nbrew "node"\ncask "firefox"\ncask "visual-studio-code"'}</Cmd>
       <p>
         Each line is one package. You can edit the file by hand, remove things you don't want on
         the next Mac, or keep it in your dotfiles repository.

@@ -8,6 +8,7 @@
     "build": "node scripts/fetch-releases.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "build:dev": "node scripts/fetch-releases.mjs --if-missing && vite build --mode development",
     "lint": "eslint .",
+    "og:guides": "node scripts/generate-og-images.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

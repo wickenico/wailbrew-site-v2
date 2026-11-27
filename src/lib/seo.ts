@@ -7,6 +7,8 @@ export interface PageMeta {
   title: string;
   description: string;
   type?: "website" | "article";
+  image?: string;
+  imageAlt?: string;
 }
 
 export const pageMeta: Record<string, PageMeta> = {
@@ -38,7 +40,13 @@ export const pageMeta: Record<string, PageMeta> = {
   ...Object.fromEntries(
     guides.map((guide) => [
       guidePath(guide.slug),
-      { title: `${guide.metaTitle} – WailBrew`, description: guide.description, type: "article" },
+      {
+        title: `${guide.metaTitle} – WailBrew`,
+        description: guide.description,
+        type: "article",
+        image: `${SITE_URL}/og/guides/${guide.slug}.jpg`,
+        imageAlt: guide.title,
+      },
     ]),
   ),
 };
